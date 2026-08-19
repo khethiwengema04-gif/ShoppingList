@@ -30,6 +30,7 @@ export const Log = () => {
                 <button className={styles.loginBtn} onClick={navigateToHome}>
                     LOGIN
                 </button>
+                <h2 className={styles.signUp}>Don't have an account? SignUp</h2>
             </div>
 
         </div>

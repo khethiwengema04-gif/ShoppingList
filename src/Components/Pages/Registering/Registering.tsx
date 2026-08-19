@@ -1,47 +1,59 @@
-// import styles from './Registering.module.css';
-
-// const Register = () => {
-//     return (
-//         <div className={styles.container}>
-
-//             <div className="header">
-//                 <div className="text">Register</div>
-//                 <div className="underline"></div>
-//             </div>
-//             <div className="inputs" >
-//                 <div className="input">
-//                     <input type="text" />
-//                 </div>
-
-//                 <div className="input">
-//                     <input type="fullNames" />
-//                 </div>
-
-//                 <div className="input">
-//                     <input type="lastName" />
-//                 </div>
-
-//                 <div className="input">
-//                     <input type="emailAdress" />
-//                 </div>
-
-//                 <div className="input">
-//                     <input type="cellPhone" />
-//                 </div>
-
-//                 <div className="input">
-//                     <input type="password" />
-//                 </div>
-
-//                 <div className="input">
-//                     <input type="verifyPassword" />
-//                 </div>
-
-//             </div>
+import styles from './Registering.module.css';
+import { Link, useNavigate } from 'react-router-dom';
 
 
-//         </div>
-//     )
-// }
+const Register = () => {
+    const navigate = useNavigate();
+    const navigateToHome = () => {
+        navigate("/home")
+    }
+    return (
+        <div className={styles.container}>
 
-// export default Register
+            <div className="header">
+                <h1 className="text">Register</h1>
+                {/* <div className="underline"></div> */}
+            </div>
+            <div className="inputs" >
+                <div className="name">
+                    <p>Full Names</p>
+                    <input type="text" />
+                </div>
+
+                <div className="lastname">
+                    <p>Lastname</p>
+                    <input type="text" />
+                </div>
+
+                <div className="email">
+                    <p>Email</p>
+                    <input type="text" />
+                </div>
+
+                <div className="cellphone">
+                    <p>Cellphone</p>
+                    <input type="text" />
+                </div>
+
+                <div className="password">
+                    <p>Password</p>
+                    <input type="text" />
+                </div>
+
+                <div className="confirmPassword">
+                    <p>Confirm Password</p>
+                    <input type="text" />
+                </div>
+
+                <button className={styles.registerBtn} onClick={navigateToHome}>
+                    REGISTER
+                </button>
+
+            </div>
+
+
+        </div>
+    )
+}
+
+export default Register

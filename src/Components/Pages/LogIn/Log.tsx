@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './LogIn.module.css';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 
@@ -10,6 +10,7 @@ export const Log = () => {
     const navigateToHome = () => {
         navigate("/home")
     }
+
 
     return (
         <div className={styles.container}>
@@ -30,9 +31,11 @@ export const Log = () => {
                 <button className={styles.loginBtn} onClick={navigateToHome}>
                     LOGIN
                 </button>
-                <h2 className={styles.signUp}>Don't have an account? SignUp</h2>
+
+                <Link className={styles.signUp} to='/register'>Don't have an account? SignUp</Link>
+
             </div>
 
-        </div>
+        </div >
     )
 }

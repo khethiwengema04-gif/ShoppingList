@@ -1,14 +1,18 @@
 .container {
+    width: 700px;
     display: flex;
     flex-direction: column;
     margin: auto;
     margin-top: 0px;
     padding-bottom: 0px;
     align-items: center;
-    background: aquamarine;
-    /* background-color: aquamarine; */
-    height: 800px;
+    background: rgb(255, 127, 246);
+    font: 100px;
+    font-size: medium;
+    height: 700px;
     gap: 30px;
+    border-radius: 8px;
+
 }
 
 .header {
@@ -40,4 +44,12 @@
     flex-direction: column;
     text-align: start;
     color: black;
+}
+
+.button {
+    background-color: rgb(246, 121, 187);
+    gap: 30px;
+    border-radius: 8px;
+    cursor: pointer;
+
 }

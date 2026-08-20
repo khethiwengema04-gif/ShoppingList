@@ -1,13 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
-export interface RegisterState {
+export interface User {
+    id?: string
     fullnames: string,
     lastname: string,
     emailadress: string,
     cellphone: string,
     password: string,
     verifypassword: string
+
+}
+
+export interface RegisterState extends User {
+    isloading: boolean
+    error: string | null
 }
 
 const initialState: RegisterState = {
@@ -17,9 +24,13 @@ const initialState: RegisterState = {
     cellphone: '',
     password: '',
     verifypassword: '',
+    isloading: false,
+    error: null,
 }
 
 //thunk
+
+
 
 export const registerSlice = createSlice({
     name: 'register',

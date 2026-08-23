@@ -1,4 +1,24 @@
 {
-    "users": [],
-    "lists": []
+  "users": [
+    {
+      "fullnames": "Khethiwe ",
+      "lastname": "ngema",
+      "emailadress": "khethiwe.ngema04@gmail.com",
+      "password": "khethy",
+      "cellphone": "0606669273",
+      "verifypassword": "khethy",
+      "id": "vnj8m0tN84k"
+    },
+    {
+      "fullnames": "Neliswa",
+      "lastname": "Ngcobo",
+      "emailadress": "neliswa@gmail.com",
+      "password": "Anele",
+      "cellphone": "0712346778",
+      "verifypassword": "Anele",
+      "id": "XmL1SL9xy2s"
+    }
+  ],
+  "lists": [],
+  "$schema": "./node_modules/json-server/schema.json"
 }

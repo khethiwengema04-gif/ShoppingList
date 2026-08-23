@@ -1,14 +1,36 @@
 import React from 'react'
 import styles from './LogIn.module.css';
 import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import type { RootState } from '../../../store';
+import {
+    loginThunk,
+    setemail,
+    setpassword,
+
+} from '../../../Features/login';
 
 
+const login = () => {
+    const { email, password } = useSelector(
+        (state: RootState) => state.login
+    );
 
 
-export const Log = () => {
+    // export const Log = () => {
     const navigate = useNavigate();
     const navigateToHome = () => {
         navigate("/home")
+    }
+    const dispatch = useDispatch()
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault()
+        const loginUser = await dispatch(loginThunk({ email, password }) as any)
+        if (loginThunk.fulfilled.match(loginUser)) {
+            alert('logged in')
+            navigate('/home')
+        }
+
     }
 
 
@@ -17,25 +39,29 @@ export const Log = () => {
             <div className={styles.loginForm}>
                 <h1 className={styles.tittle}>LOG IN</h1>
 
-                <div className={styles.email}>
-                    <label>Email Adress:</label>
-                    <input type="email" className={styles.emailInput} />
-                </div>
+                <form onSubmit={handleSubmit}>
+
+                    <div className={styles.email}>
+                        <label>Email Adress:</label>
+                        <input type="email" className={styles.emailInput} />
+                    </div>
 
 
-                <div className={styles.password}>
-                    <label>Password:</label>
-                    <input type="password" className={styles.passwordInput} />
-                </div>
+                    <div className={styles.password}>
+                        <label>Password:</label>
+                        <input type="password" className={styles.passwordInput} />
+                    </div>
 
-                <button className={styles.loginBtn} onClick={navigateToHome}>
-                    LOGIN
-                </button>
+                    <button className={styles.loginBtn} onClick={navigateToHome}>
+                        LOGIN
+                    </button>
 
-                <Link className={styles.signUp} to='/register'>Don't have an account? SignUp</Link>
-
+                    <Link className={styles.signUp} to='/register'>Don't have an account? SignUp</Link>
+                </form>
             </div>
 
         </div >
     )
 }
+
+export default login

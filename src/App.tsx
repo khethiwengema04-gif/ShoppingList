@@ -1,5 +1,5 @@
 import React from 'react'
-import { Log } from './Components/Pages/LogIn/Log'
+import Log from './Components/Pages/LogIn/Log'
 import { Route, Routes } from 'react-router-dom'
 import { Home } from './Components/Pages/Home/Home'
 import Register from './Components/Pages/Registering/Registering'

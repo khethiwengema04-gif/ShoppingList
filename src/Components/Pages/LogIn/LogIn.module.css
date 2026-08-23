@@ -6,7 +6,7 @@
     margin-top: 0px;
     padding-bottom: 0px;
     align-items: center;
-    background: rgb(255, 127, 246);
+    background: aquamarine;
 
     font: 100px;
     font-size: medium;
@@ -48,7 +48,7 @@
 }
 
 .button {
-    background-color: rgb(246, 121, 187);
+    background-color: rgb(28, 150, 144);
     gap: 30px;
     border-radius: 8px;
     cursor: pointer;

@@ -19,9 +19,7 @@ const login = () => {
 
     // export const Log = () => {
     const navigate = useNavigate();
-    const navigateToHome = () => {
-        navigate("/home")
-    }
+
     const dispatch = useDispatch()
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
@@ -29,6 +27,9 @@ const login = () => {
         if (loginThunk.fulfilled.match(loginUser)) {
             alert('logged in')
             navigate('/home')
+        }
+        if (loginThunk.rejected.match(loginUser)) {
+            alert(loginUser.payload as string || 'Invalid email or password')
         }
 
     }
@@ -52,7 +53,7 @@ const login = () => {
                         <input type="password" className={styles.passwordInput} />
                     </div>
 
-                    <button className={styles.loginBtn} onClick={navigateToHome}>
+                    <button className={styles.loginBtn}>
                         LOGIN
                     </button>
 

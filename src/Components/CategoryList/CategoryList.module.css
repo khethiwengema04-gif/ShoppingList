@@ -1,0 +1,14 @@
+.category {
+    background-color: aquamarine;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+}
+
+.button {
+    background-color: rgb(15, 130, 92);
+    color: white;
+    gap: 5px;
+    width: 5%;
+}

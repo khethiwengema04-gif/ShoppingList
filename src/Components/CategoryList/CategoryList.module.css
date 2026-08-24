@@ -4,6 +4,8 @@
     height: 200px;
     display: flex;
     flex-direction: row;
+    border-radius: rgb(32, 133, 99);
+    border-radius: 10px;
 }
 
 .button {

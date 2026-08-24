@@ -29,7 +29,16 @@ const login = () => {
             navigate('/home')
         }
         if (loginThunk.rejected.match(loginUser)) {
-            alert(loginUser.payload as string || 'Invalid email or password')
+            const payload = loginUser.payload as
+                { status?: number; message?: string }
+            undefined;
+            const errorMessage = payload?.message || loginUser.error?.message;
+
+            if (errorMessage === "user not found" || payload?.status === 404) {
+                alert("user not found. Please check your email or sign up.");
+            } else {
+                alert("Login failed. Please try again.");
+            }
         }
 
     }

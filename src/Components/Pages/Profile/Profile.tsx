@@ -1,8 +1,15 @@
 import React from 'react'
 import styles from './Profile.module.css'
 import profile from '../../../Assets/profile.png'
+import { useNavigate } from 'react-router-dom'
+
 
 const Profile = () => {
+
+    const navigate = useNavigate()
+    const handleBackToHomeClick = () => {
+        navigate('/')
+    }
     return (
         <div className={styles.container}>
             <div className={styles.loginForm}>
@@ -23,6 +30,9 @@ const Profile = () => {
                 </div>
 
 
+            </div>
+            <div>
+                <button onClick={handleBackToHomeClick}>Back To Home</button>
             </div>
 
 

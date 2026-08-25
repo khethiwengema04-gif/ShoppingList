@@ -8,6 +8,9 @@
 ```bash
    react-redux
    reduxjs/toolkit
+   json derver
+   axios
+   
 
    Created project folder from file explore
    Clone repository:

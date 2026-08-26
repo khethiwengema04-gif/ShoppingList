@@ -1,19 +1,32 @@
-import React from 'react'
-import style from './Card.module.css'
 
+import style from './Card.module.css'
+import type { Category } from '../../Features/category'
 
 
 interface CardProps {
-    // category: Category;
+    category: Category;
     onView: () => void;
     onDelete: () => void;
 }
 
 
-// export const Card = ({ Card, onView, onDelete }: CardProps) => {
-// return (
-//     <div>
+export const Card = ({ category, onView, onDelete }: CardProps) => {
+    return (
+        <div className={style.categoryCard}>
+            <div className={style.categoryButton}>
+                <h2>{category.name}</h2>
 
-//     </div>
-// )
-// }
+                <button onClick={onView} className={style.viewButton}  >
+                    View
+                </button>
+
+                <button onClick={onDelete} className={style.deletebutton}  >
+                    Delete
+                </button>
+
+
+            </div>
+
+        </div>
+    )
+}

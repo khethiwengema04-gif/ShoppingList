@@ -1,4 +1,4 @@
-import React from 'react'
+
 import styles from './Profile.module.css'
 import profile from '../../../Assets/profile.png'
 import { useNavigate } from 'react-router-dom'

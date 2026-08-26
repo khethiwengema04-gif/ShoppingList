@@ -5,16 +5,19 @@ import { useDispatch, useSelector } from 'react-redux';
 import type { RootState } from '../../../store';
 import {
     loginThunk,
-    setemail,
-    setpassword,
+
 
 } from '../../../Features/login';
+import {
+    setemailadress,
+    setpassword
+} from '../../../Features/register'
 
 
 const login = () => {
-    const { email, password } = useSelector(
-        (state: RootState) => state.login
-    );
+
+    const emailadress = useSelector((state: RootState) => state.register.emailadress)
+    const password = useSelector((state: RootState) => state.register.password)
 
 
     // export const Log = () => {
@@ -23,26 +26,16 @@ const login = () => {
     const dispatch = useDispatch()
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
-        const loginUser = await dispatch(loginThunk({ email, password }) as any)
+        const loginUser = await dispatch(loginThunk({ emailadress, password }) as any)
         if (loginThunk.fulfilled.match(loginUser)) {
-            alert('logged in')
+            alert('Log In')
             navigate('/home')
         }
         if (loginThunk.rejected.match(loginUser)) {
-            const payload = loginUser.payload as
-                { status?: number; message?: string }
-            undefined;
-            const errorMessage = payload?.message || loginUser.error?.message;
+            alert(loginUser.payload as string || "Invalid password")
 
-            if (errorMessage === "user not found" || payload?.status === 404) {
-                alert("user not found. Please check your email or sign up.");
-            } else {
-                alert("Login failed. Please try again.");
-            }
         }
-
     }
-
 
     return (
         <div className={styles.container}>
@@ -53,13 +46,17 @@ const login = () => {
 
                     <div className={styles.email}>
                         <label>Email Adress:</label>
-                        <input type="email" className={styles.emailInput} />
+                        <input type="email" className={styles.emailInput}
+                            value={emailadress}
+                            onChange={(e) => dispatch(setemailadress(e.target.value))} />
                     </div>
 
 
                     <div className={styles.password}>
                         <label>Password:</label>
-                        <input type="password" className={styles.passwordInput} />
+                        <input type="password" className={styles.passwordInput}
+                            value={password}
+                            onChange={(e) => dispatch(setpassword(e.target.value))} />
                     </div>
 
                     <button className={styles.loginBtn}>

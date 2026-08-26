@@ -13,70 +13,30 @@ export const Category: React.FC<CategoryProps> = ({ }) => {
     return (
 
 
-        <div>
-            <h1 className={styles.tittle}>CATEGORIES:</h1>
-            <div>
-                <h2 className={styles.category}>Fruits</h2>
-                <button className={styles.button} onClick={() => { }} >
-                    View
-                </button>
+        <form >
+            <div className={styles.cardContainer}>
+                <h1 className={styles.tittle}>CATEGORIES:</h1>
 
-                <button className={styles.button} onClick={() => { }}>
-                    Delete
-                </button>
+                <input className={styles.enter}
+                    type='text'
+                    placeholder='addCategory Here'
+                />
+                <div>
 
-            </div>
+                    <button className={styles.button} onClick={() => { }} >
+                        Add+
+                    </button>
+                    {/* 
+                    <button className={styles.button} onClick={() => { }}>
+                        Delete
+                    </button> */}
 
-
-
-            <div>
-                <h2 className={styles.category}>Cosmetics</h2>
-                <button className={styles.button} onClick={() => { }} >
-                    View
-                </button>
-
-                <button className={styles.button} onClick={() => { }}>
-                    Delete
-                </button>
+                </div>
 
             </div>
 
 
-
-            <div>
-                <h2 className={styles.category}>Beef</h2>
-                <button className={styles.button} onClick={() => { }} >
-                    View
-                </button>
-
-                <button className={styles.button} onClick={() => { }}>
-                    Delete
-                </button>
-
-            </div>
-
-
-
-            <div>
-                <h2 className={styles.category}>Backery</h2>
-                <button className={styles.button} onClick={() => { }} >
-                    View
-                </button>
-
-                <button className={styles.button} onClick={() => { }}>
-                    Delete
-                </button>
-
-            </div>
-
-
-
-
-
-
-
-
-        </div>
+        </form>
 
     )
 }

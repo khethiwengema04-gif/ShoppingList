@@ -1,6 +1,7 @@
 
 import style from './Card.module.css'
 import type { Category } from '../../Features/category'
+// import { useNavigate } from 'react-router-dom';
 
 
 interface CardProps {
@@ -9,7 +10,7 @@ interface CardProps {
     onDelete: () => void;
 }
 
-// export const Navbar: React.FC<CardProps> = ({ }) => {
+// export const Card: React.FC<CardProps> = ({ }) => {
 //     const navigate = useNavigate()
 //     const handleSettingsClick = () => {
 //         navigate('/itemList')
@@ -36,3 +37,4 @@ export const Card = ({ category, onView, onDelete }: CardProps) => {
         </div>
     )
 }
+

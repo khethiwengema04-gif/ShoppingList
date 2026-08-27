@@ -46,6 +46,27 @@
       "id": "NnSqh8DmfQg"
     }
   ],
-  "lists": [],
+  "lists": [
+    {
+      "name": "alcohol",
+      "id": "CvXSL-ZgJ1w"
+    },
+    {
+      "name": "grocery",
+      "id": "zLW2B8x9-hM"
+    },
+    {
+      "name": "Fruits",
+      "id": "pVmBcHymong"
+    },
+    {
+      "name": "Meat",
+      "id": "BKXhv9aL8Zs"
+    },
+    {
+      "name": "Meat",
+      "id": "Dt6UqkwDwoA"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }

@@ -1,18 +1,17 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import axios from 'axios'
 
 export interface Category {
-    id: string,
-    userId: string,
-    name: string,
+    id: string;
+    userId: string;
+    name: string;
 }
 
 interface CategoryState {
-    category: Category[],
-    isSucess: boolean,
-    isLoading: boolean,
-    error: string | null,
+    category: Category[];
+    isSucess: boolean;
+    isLoading: boolean;
+    error: string | null;
 }
 
 const initialState: CategoryState = {
@@ -22,16 +21,19 @@ const initialState: CategoryState = {
     error: null,
 }
 
-
-//thunk
-export const categoryThunk = createAsyncThunk(
+// Fixed thunk: Added explicit types to the ThunkAPI config (3rd generic argument)
+export const categoryThunk = createAsyncThunk<
+    Category,                         // Types the fulfilled return value
+    Omit<Category, "id">,             // Types the first argument (payload)
+    { rejectValue: string }          // Types the api.rejectWithValue payload
+>(
     "category/categoryThunk",
-    async (newCategory: Omit<Category, "id">, api) => {
+    async (newCategory, api) => {
         try {
             const response = await fetch(`http://localhost:3000/lists`, {
                 method: "POST",
                 headers: {
-                    "content-Type": "application/json",
+                    "Content-Type": "application/json",
                 },
                 body: JSON.stringify(newCategory),
             })
@@ -39,7 +41,7 @@ export const categoryThunk = createAsyncThunk(
                 throw new Error('Category not added to the server')
             }
             const data = await response.json();
-            return data;
+            return data as Category;
         }
         catch (error: any) {
             return api.rejectWithValue(error.message || 'Something is wrong');
@@ -47,18 +49,10 @@ export const categoryThunk = createAsyncThunk(
     }
 );
 
-
 export const categorySlice = createSlice({
     name: 'category',
     initialState,
-
-    reducers: {
-
-        // setcategory: (state, action: PayloadAction<string>) => {
-        //     state.category = action.payload
-        // },
-    },
-
+    reducers: {},
     extraReducers: (builder) => {
         builder
             .addCase(categoryThunk.pending, (state) => {
@@ -72,13 +66,10 @@ export const categorySlice = createSlice({
             })
             .addCase(categoryThunk.rejected, (state, action) => {
                 state.isLoading = false;
-                state.error = action.payload as string;
+                // action.payload is now safely recognized as a string
+                state.error = action.payload ?? 'Something went wrong';
             });
     }
 });
 
-
-
-// Action creators are generated for each case reducer function
-export const { } = categorySlice.actions
 export default categorySlice.reducer

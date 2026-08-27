@@ -44,6 +44,24 @@
       "cellphone": "0694563822",
       "verifypassword": "mvelo",
       "id": "NnSqh8DmfQg"
+    },
+    {
+      "fullnames": "nompilo",
+      "lastname": "nzuza",
+      "emailadress": "nompilo@gmail.com",
+      "password": "mpilo",
+      "cellphone": "0614444381",
+      "verifypassword": "mpilo",
+      "id": "TO6BS9tABGI"
+    },
+    {
+      "fullnames": "sne",
+      "lastname": "nzuza",
+      "emailadress": "khethiwe.ngema04@gmail.com",
+      "password": "sne",
+      "cellphone": "0614444381",
+      "verifypassword": "sne",
+      "id": "ZNwJ_EmGVX4"
     }
   ],
   "lists": [
@@ -66,6 +84,34 @@
     {
       "name": "Meat",
       "id": "Dt6UqkwDwoA"
+    },
+    {
+      "name": "Vegitables",
+      "id": "8krSSXqpxeA"
+    },
+    {
+      "name": "meart",
+      "id": "HdO6-CaFm8w"
+    },
+    {
+      "userId": "vnj8m0tN84k",
+      "name": "Cosmetics",
+      "id": "0715uDI8vjc"
+    },
+    {
+      "userId": "vnj8m0tN84k",
+      "name": "Fruits",
+      "id": "-xkgjEfWqXo"
+    },
+    {
+      "userId": "vnj8m0tN84k",
+      "name": "FOOD",
+      "id": "owWmaYRN2ys"
+    },
+    {
+      "userId": "vnj8m0tN84k",
+      "name": "Cars",
+      "id": "-1XtMqPm0IY"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

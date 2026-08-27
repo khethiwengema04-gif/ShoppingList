@@ -21,11 +21,10 @@ const initialState: CategoryState = {
     error: null,
 }
 
-// Fixed thunk: Added explicit types to the ThunkAPI config (3rd generic argument)
 export const categoryThunk = createAsyncThunk<
-    Category,                         // Types the fulfilled return value
-    Omit<Category, "id">,             // Types the first argument (payload)
-    { rejectValue: string }          // Types the api.rejectWithValue payload
+    Category,
+    Omit<Category, "id">,
+    { rejectValue: string }
 >(
     "category/categoryThunk",
     async (newCategory, api) => {

@@ -62,7 +62,7 @@ const Profile = () => {
             </div> */}
 
             <div>
-                <button onClick={handleBackToHomeClick}>Back To Home</button>
+                <button onClick={handleBackToHomeClick}>Log out</button>
             </div>
 
 

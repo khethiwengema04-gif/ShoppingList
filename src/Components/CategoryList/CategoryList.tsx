@@ -7,7 +7,6 @@ import type { Category } from '../../Features/category'
 
 
 
-
 interface CategoryProps {
 
     onDelete: (id: number) => void
@@ -18,7 +17,6 @@ interface CategoryProps {
 
 export const CategoryComponent: React.FC<CategoryProps> = () => {
     const dispatch = useDispatch() as any;
-
     const category = useSelector((state: RootState) => state.category);
     const user = useSelector((state: RootState) => state.login.user)
     const [categoryName, setCategoryName] = useState<string>('');
@@ -33,8 +31,6 @@ export const CategoryComponent: React.FC<CategoryProps> = () => {
 
         dispatch(categoryThunk({ userId: user?.id, name: categoryName } as Omit<Category, "id">))
     };
-
-
 
 
 

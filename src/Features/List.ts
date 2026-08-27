@@ -8,14 +8,17 @@ export interface ItemList {
     optionalNote: string
 }
 
-interface ItemlistState {
-    itemlist: ItemList[]
-    isLoading: boolean
-    error: string | null
+interface ItemlistState extends ItemList {
+    itemList: ItemList[];
+    isLoading: boolean;
+    error: string | null;
 }
 
 const initialState: ItemlistState = {
-    itemlist: [],
+    itemList: [],
+    name: "",
+    quantity: 0,
+    optionalNote: "",
     isLoading: false,
     error: null,
 }
@@ -23,7 +26,7 @@ const initialState: ItemlistState = {
 export const ItemListThunk = createAsyncThunk(
     'ItemList/ItemListThunk',
     async (newItemList: Omit<ItemList, 'id'>) => {
-        const response = await fetch('http://localhost:3000/lists', {
+        const response = await fetch('', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -42,7 +45,7 @@ export const ItemListThunk = createAsyncThunk(
 export const getItemListThunk = createAsyncThunk(
     'ItemList/ItemListThunk',
     async () => {
-        const response = await fetch('http://localhost:3000/lists', {
+        const response = await fetch('', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -72,12 +75,13 @@ export const ItemListSlice = createSlice({
             state.quantity = action.payload;
         },
         AddOptionalnote: (state, action: PayloadAction<string>) => {
-            state.optionalnote = action.payload;
+            state.optionalNote = action.payload;
         },
-        AddItem: (state, action: PayloadAction<Items>) => {
-            state.item = action.payload;
+        AddItemList: (state, action: PayloadAction<[]>) => {
+            state.itemList = action.payload;
         },
     },
+
     extraReducers: (builder) => {
         builder
             .addCase(ItemListThunk.pending, (state) => {
@@ -86,7 +90,7 @@ export const ItemListSlice = createSlice({
             })
             .addCase(ItemListThunk.fulfilled, (state, action: PayloadAction<ItemList>) => {
                 state.isLoading = false
-                state.itemlist.push(action.payload)
+                state.itemList.push(action.payload)
             })
             .addCase(ItemListThunk.rejected, (state, action) => {
                 state.isLoading = false
@@ -95,5 +99,5 @@ export const ItemListSlice = createSlice({
     },
 })
 
-export const { AddName, AddQuantity, AddOptionalnote, AddItem } = ItemListSlice.actions
+export const { AddName, AddQuantity, AddOptionalnote, AddItemList } = ItemListSlice.actions
 export default ItemListSlice.reducer

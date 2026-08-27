@@ -9,6 +9,12 @@ interface CardProps {
     onDelete: () => void;
 }
 
+// export const Navbar: React.FC<CardProps> = ({ }) => {
+//     const navigate = useNavigate()
+//     const handleSettingsClick = () => {
+//         navigate('/itemList')
+
+
 
 export const Card = ({ category, onView, onDelete }: CardProps) => {
     return (

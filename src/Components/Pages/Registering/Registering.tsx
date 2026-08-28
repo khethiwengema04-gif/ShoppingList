@@ -1,5 +1,5 @@
 import styles from './Registering.module.css';
-import { useNavigate } from 'react-router-dom';
+
 import { useDispatch, useSelector } from 'react-redux';
 import type { RootState } from '../../../store';
 import {

@@ -112,6 +112,16 @@
       "userId": "vnj8m0tN84k",
       "name": "Cars",
       "id": "-1XtMqPm0IY"
+    },
+    {
+      "userId": "vnj8m0tN84k",
+      "name": "Clothes",
+      "id": "MIEi5UcUwLM"
+    },
+    {
+      "userId": "vnj8m0tN84k",
+      "name": "Grocery",
+      "id": "axNZ6QlQBXM"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

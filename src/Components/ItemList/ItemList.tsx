@@ -2,7 +2,7 @@ import React from 'react'
 import style from './ItemList.module.css'
 import { useDispatch, useSelector } from 'react-redux'
 import type { AppDispatch, RootState } from '../../store'
-import { AddName, AddQuantity, AddOptionalnote, AddItemList, ItemListThunk } from '../../Features/List'
+import { AddName, AddQuantity, AddOptionalnote, ItemListThunk } from '../../Features/List'
 
 
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from './CategoryList.module.css'
 import { useDispatch, useSelector } from 'react-redux'
 import type { RootState } from '../../store'
-import { categorySlice, categoryThunk } from '../../Features/category'
+import { categoryThunk } from '../../Features/category'
 import type { Category } from '../../Features/category'
 
 
@@ -17,7 +17,7 @@ interface CategoryProps {
 
 export const CategoryComponent: React.FC<CategoryProps> = () => {
     const dispatch = useDispatch() as any;
-    const category = useSelector((state: RootState) => state.category);
+    // const category = useSelector((state: RootState) => state.category);
     const user = useSelector((state: RootState) => state.login.user)
     const [categoryName, setCategoryName] = useState<string>('');
 

@@ -3,7 +3,7 @@ import loginReducer from '../src/Features/login'
 import registerReducer from './Features/register'
 import Category from './Features/category'
 import List from './Features/List'
-// import profile from './Features/profile'
+import profile from './Features/profile'
 
 export const store = configureStore({
 	reducer: {
@@ -11,7 +11,7 @@ export const store = configureStore({
 		register: registerReducer,
 		category: Category,
 		list: List,
-		// profile: profile
+		profile: profile
 	},
 })
 

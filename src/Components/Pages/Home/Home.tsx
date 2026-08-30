@@ -18,7 +18,9 @@ export const Home = () => {
             <div>
                 {
                     category.category.map((link) => (
-                        <Card key={link.id} category={link} onView={() => ({})} onDelete={() => ({})} />
+                        <Card key={link.id} category={link}
+                            onView={() => ({})}
+                            onDelete={() => ({})} />
                     ))
                 }
             </div>

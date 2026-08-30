@@ -1,7 +1,7 @@
 
 import style from './Card.module.css'
 import type { Category } from '../../Features/category'
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 interface CardProps {
@@ -10,20 +10,18 @@ interface CardProps {
     onDelete: () => void;
 }
 
-// export const Card: React.FC<CardProps> = ({ }) => {
-//     const navigate = useNavigate()
-//     const handleSettingsClick = () => {
-//         navigate('/itemList')
-
-
 
 export const Card = ({ category, onView, onDelete }: CardProps) => {
+    const navigate = useNavigate()
+    const handleSubmitClick = () => {
+        navigate('/view')
+    }
     return (
         <div className={style.categoryCard}>
             <div className={style.categoryButton}>
                 <h2>{category.name}</h2>
 
-                <button onClick={onView} className={style.viewButton}  >
+                <button onClick={handleSubmitClick} className={style.viewButton}  >
                     View
                 </button>
 

@@ -34,7 +34,7 @@ export const ItemListThunk = createAsyncThunk(
             body: JSON.stringify(newItemList),
         });
         if (!response.ok) throw new Error('Item was not added');
-        // return (await response.json()) as ItemList
+        return (await response.json()) as ItemList
 
         const data = await response.json();
         console.log(data)
@@ -54,7 +54,7 @@ export const getItemListThunk = createAsyncThunk(
         });
 
         if (!response.ok) throw new Error('Item was not added');
-        // return (await response.json()) as ItemList
+        return (await response.json()) as ItemList
 
         const data = await response.json();
         console.log(data)

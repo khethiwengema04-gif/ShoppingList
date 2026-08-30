@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-// import type { PayloadAction } from '@reduxjs/toolkit'
+import type { PayloadAction } from '@reduxjs/toolkit'
 import axios from 'axios'
 import type { User } from './register'
 
@@ -55,7 +55,7 @@ export const loginSlice = createSlice({
             })
 
             .addCase(loginThunk.fulfilled, (state, action) => {
-
+                state.isloading = false
                 state.user = action.payload
             })
 

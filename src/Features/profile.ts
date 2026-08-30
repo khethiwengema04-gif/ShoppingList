@@ -1,11 +1,121 @@
-// import { createSlice } from "@reduxjs/toolkit";
-// import { PayloadAction }  from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, type PayloadAction } from '@reduxjs/toolkit';
 
-export interface User {
-    fullnames: string,
-    lastname: string,
-    emailadress: string,
-    cellphone: string,
-    password: string,
+export interface ProfileState {
+    id?: number | string;
+    name: string;
+    surname: string;
+    email: string;
+    cellNumber: string;
+    password: string;
+    isLoading: boolean;
+    error: string | null;
 }
+
+const initialState: ProfileState = {
+    name: '',
+    surname: '',
+    email: '',
+    cellNumber: '',
+    password: '',
+    isLoading: false,
+    error: null,
+};
+
+const BASE_API_URL = 'http://localhost:3000/users';
+
+const getAuthenticatedUserId = (state: any): string | number | null => {
+    return state.auth?.user?.id || null;
+};
+
+// READ: Fetch current data
+export const fetchProfileData = createAsyncThunk(
+    'profile/fetchProfileData',
+    async (_, { getState, rejectWithValue }) => {
+        try {
+            const state = getState() as any;
+            const userId = getAuthenticatedUserId(state);
+
+            if (!userId) throw new Error('No authenticated user session found.');
+
+            const response = await fetch(`${BASE_API_URL}/${userId}`);
+            if (!response.ok) throw new Error('Failed to fetch profile data.');
+
+            return await response.json();
+        } catch (error: any) {
+            return rejectWithValue(error.message);
+        }
+    }
+);
+
+// UPDATE: Save profile and credential data
+export const updateProfileData = createAsyncThunk(
+    'profile/updateProfileData',
+    async (formData: Omit<ProfileState, 'isLoading' | 'error'>, { getState, rejectWithValue }) => {
+        try {
+            const state = getState() as any;
+            const userId = getAuthenticatedUserId(state);
+
+            if (!userId) throw new Error('Authentication session expired.');
+
+            const response = await fetch(`${BASE_API_URL}/${userId}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ ...formData, id: userId }),
+            });
+
+            if (!response.ok) throw new Error('Failed to update profile records.');
+            return await response.json();
+        } catch (error: any) {
+            return rejectWithValue(error.message);
+        }
+    }
+);
+
+const profileSlice = createSlice({
+    name: 'profile',
+    initialState,
+    reducers: {
+        clearProfileStore: () => initialState
+    },
+    extraReducers: (builder) => {
+        builder
+            .addCase(fetchProfileData.pending, (state) => {
+                state.isLoading = true;
+                state.error = null;
+            })
+            .addCase(fetchProfileData.fulfilled, (state, action: PayloadAction<any>) => {
+                state.isLoading = false;
+                state.id = action.payload.id;
+                state.name = action.payload.name || '';
+                state.surname = action.payload.surname || '';
+                state.email = action.payload.email || '';
+                state.cellNumber = action.payload.cellNumber || '';
+                state.password = action.payload.password || '';
+            })
+            .addCase(fetchProfileData.rejected, (state, action) => {
+                state.isLoading = false;
+                state.error = action.payload as string;
+            })
+            .addCase(updateProfileData.pending, (state) => {
+                state.isLoading = true;
+            })
+            .addCase(updateProfileData.fulfilled, (state, action: PayloadAction<any>) => {
+                state.isLoading = false;
+                state.name = action.payload.name;
+                state.surname = action.payload.surname;
+                state.email = action.payload.email;
+                state.cellNumber = action.payload.cellNumber;
+                state.password = action.payload.password;
+                alert('Profile saved successfully!');
+            })
+            .addCase(updateProfileData.rejected, (state, action) => {
+                state.isLoading = false;
+                state.error = action.payload as string;
+                alert(`Error: ${action.payload}`);
+            });
+    },
+});
+
+export const { clearProfileStore } = profileSlice.actions;
+export default profileSlice.reducer;
 

@@ -122,6 +122,38 @@
       "userId": "vnj8m0tN84k",
       "name": "Grocery",
       "id": "axNZ6QlQBXM"
+    },
+    {
+      "userId": "vnj8m0tN84k",
+      "name": "Food",
+      "id": "JFhJr7h8a4k"
+    },
+    {
+      "name": "Hair",
+      "id": "zsWRhnLY-z0"
+    },
+    {
+      "name": "sho",
+      "id": "25a6Qzk_LhQ"
+    },
+    {
+      "name": "bb",
+      "id": "4_7Vovuddcg"
+    },
+    {
+      "userId": "TO6BS9tABGI",
+      "name": "Food",
+      "id": "yOb2-Xw5-rA"
+    },
+    {
+      "userId": "TO6BS9tABGI",
+      "name": "PAMPERS",
+      "id": "unMzXspGt4o"
+    },
+    {
+      "userId": "TO6BS9tABGI",
+      "name": "PAMPERS",
+      "id": "oQLNGavLHqM"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

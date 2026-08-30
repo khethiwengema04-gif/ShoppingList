@@ -21,6 +21,7 @@ const initialState: CategoryState = {
     error: null,
 }
 
+
 export const categoryThunk = createAsyncThunk<
     Category,
     Omit<Category, "id">,

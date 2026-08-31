@@ -179,6 +179,11 @@
       "userId": "vnj8m0tN84k",
       "name": "Party",
       "id": "xrE-UQHWZno"
+    },
+    {
+      "userId": "vnj8m0tN84k",
+      "name": "PHONES",
+      "id": "pdAFVcxW2-g"
     }
   ],
   "items": [
@@ -301,6 +306,18 @@
       "quantity": 0,
       "optionalNote": "",
       "id": "4-PvzrHcJmo"
+    },
+    {
+      "name": "samsung",
+      "quantity": 2,
+      "optionalNote": "White",
+      "id": "HLOmeKZX99o"
+    },
+    {
+      "name": "Grapes",
+      "quantity": 2,
+      "optionalNote": "Dark",
+      "id": "Bmn4PhVyl2E"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

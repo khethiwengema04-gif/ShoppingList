@@ -8,12 +8,9 @@ import type { Category } from '../../Features/category'
 
 
 interface CategoryProps {
-
     onDelete: (id: number) => void
     onEdit: (id: number) => void
 }
-
-
 
 export const CategoryComponent: React.FC<CategoryProps> = () => {
     const dispatch = useDispatch() as any;

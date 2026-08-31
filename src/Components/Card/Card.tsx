@@ -11,10 +11,10 @@ interface CardProps {
 }
 
 
-export const Card = ({ category, onView, onDelete }: CardProps) => {
+export const Card = ({ category, onDelete }: CardProps) => {
     const navigate = useNavigate()
     const handleSubmitClick = () => {
-        navigate('/view')
+        navigate(`/list/${category.id}`);
     }
     return (
         <div className={style.categoryCard}>

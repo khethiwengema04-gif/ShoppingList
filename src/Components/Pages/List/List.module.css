@@ -1,0 +1,16 @@
+.itemContainer {
+    align-items: center;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 800px;
+    gap: 20px;
+}
+
+.itemContent {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}

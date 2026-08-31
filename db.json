@@ -154,6 +154,16 @@
       "userId": "TO6BS9tABGI",
       "name": "PAMPERS",
       "id": "oQLNGavLHqM"
+    },
+    {
+      "userId": "vnj8m0tN84k",
+      "name": "Food",
+      "id": "k6QCuasT4PE"
+    },
+    {
+      "userId": "vnj8m0tN84k",
+      "name": "vv",
+      "id": "T6XLVdy_QdU"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

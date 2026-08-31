@@ -2,14 +2,18 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
 export interface ItemList {
-    id?: string
-    name: string
-    quantity: number
-    optionalNote: string
+    id?: string;
+    name: string;
+    quantity: number;
+    optionalNote: string;
+
 }
 
 interface ItemlistState extends ItemList {
     itemList: ItemList[];
+    name: string;
+    quantity: number;
+    optionalNote: string;
     isLoading: boolean;
     error: string | null;
 }
@@ -24,43 +28,51 @@ const initialState: ItemlistState = {
 }
 
 export const ItemListThunk = createAsyncThunk(
-    'ItemList/ItemListThunk',
+    'ItemList/addItemThunk',
     async (newItemList: Omit<ItemList, 'id'>) => {
-        const response = await fetch('', {
+
+        const response = await fetch('http://localhost:3000/items', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(newItemList),
-        });
-        if (!response.ok) throw new Error('Item was not added');
-        return (await response.json()) as ItemList
+        })
 
-        const data = await response.json();
-        console.log(data)
-        return data;
+        if (!response.ok) {
+            throw new Error('Item was not added')
+        }
+
+        const data = await response.json()
+
+        return data as ItemList
     }
-);
+)
+
 
 export const getItemListThunk = createAsyncThunk(
-    'ItemList/ItemListThunk',
-    async () => {
-        const response = await fetch('', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+    'ItemList/getItemListThunk',
+    async (ListId: string, api) => { // Added type string for ListId
+        try {
+            // Fix: Changed &{listId} to ${ListId} and wrapped in backticks (`)
+            const response = await fetch(`http://localhost:3000/items/${ListId}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            });
 
-        });
+            // Fix: Updated error message to match a GET request failure
+            if (!response.ok) throw new Error('Could not fetch items');
 
-        if (!response.ok) throw new Error('Item was not added');
-        return (await response.json()) as ItemList
-
-        const data = await response.json();
-        console.log(data)
-        return data;
+            const data = await response.json();
+            return data as ItemList[];
+        } catch (error: any) {
+            return api.rejectWithValue(error.message || 'Failed to load items');
+        }
     },
 );
+
 
 
 
@@ -77,7 +89,7 @@ export const ItemListSlice = createSlice({
         AddOptionalnote: (state, action: PayloadAction<string>) => {
             state.optionalNote = action.payload;
         },
-        AddItemList: (state, action: PayloadAction<[]>) => {
+        AddItemList: (state, action: PayloadAction<ItemList[]>) => {
             state.itemList = action.payload;
         },
     },
@@ -96,7 +108,29 @@ export const ItemListSlice = createSlice({
                 state.isLoading = false
                 state.error = action.error.message || 'Failed'
             })
-    },
+
+
+            // GET - Get items
+            .addCase(getItemListThunk.pending, (state) => {
+                state.isLoading = true
+                state.error = null
+            })
+
+            .addCase(
+                getItemListThunk.fulfilled,
+                (state, action: PayloadAction<ItemList[]>) => {
+                    state.isLoading = false
+                    state.itemList = action.payload
+                }
+            )
+
+            .addCase(getItemListThunk.rejected, (state, action) => {
+                state.isLoading = false
+                state.error = action.error.message || 'Failed to load items'
+            })
+
+    }
+
 })
 
 export const { AddName, AddQuantity, AddOptionalnote, AddItemList } = ItemListSlice.actions

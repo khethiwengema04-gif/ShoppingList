@@ -5,23 +5,35 @@ import type { AppDispatch, RootState } from '../../../store'
 import { AddName, AddQuantity, AddOptionalnote, ItemListThunk } from '../../../Features/List'
 import { useParams } from 'react-router-dom';
 
-interface ListProps {
+// interface ListProps {
 
-    onDelete: (id: number) => void
-    onEdit: (id: number) => void
-    onClick: (id: number) => void
-}
+//     onDelete: (id: number) => void
+//     onEdit: (id: number) => void
+//     onClick: (id: number) => void
 
-export const List: React.FC<ListProps> = ({ onClick }) => {
+// }
+
+export const List: React.FC = () => {
     const dispatch = useDispatch<AppDispatch>();
     const { name, quantity, optionalNote } = useSelector((state: RootState) => state.list);
     const { listId } = useParams<{ listId: string }>();
+
     const handleAddList = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        dispatch(ItemListThunk({ name, quantity, optionalNote }));
-    };
+        e.preventDefault()
+
+        dispatch(
+            ItemListThunk({
+                name,
+                quantity,
+                optionalNote
+            })
+
+        )
+
+    }
 
     return (
+
         <form onSubmit={handleAddList} className={style.itemContainer}>
             <div className={style.itemContainer}>
                 <div className={style.itemContent}>

@@ -49,6 +49,26 @@ export const categoryThunk = createAsyncThunk<
     }
 );
 
+
+
+//DELETE THUNK
+export const deleteCategory = createAsyncThunk(
+    "Category/deleteCategory",
+    async (id: string, { rejectWithValue }) => {
+        try {
+            const response = await fetch(`http://localhost:3000/lists/${id}`, {
+                method: "DELETE",
+                headers: { "Content-Type": "application/json" },
+            });
+            if (!response.ok) throw new Error("Failed to delete Category item");
+            return id;
+        } catch (error) {
+            return rejectWithValue((error as Error).message);
+        }
+    },
+);
+
+
 export const categorySlice = createSlice({
     name: 'category',
     initialState,
@@ -68,7 +88,13 @@ export const categorySlice = createSlice({
                 state.isLoading = false;
                 // action.payload is now safely recognized as a string
                 state.error = action.payload ?? 'Something went wrong';
+            })
+
+            .addCase(deleteCategory.fulfilled, (state, action: PayloadAction<string>) => {
+                state.isLoading = false;
+                state.category = state.category.filter((list) => list.id !== action.payload);
             });
+
     }
 });
 

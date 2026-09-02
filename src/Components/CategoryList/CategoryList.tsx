@@ -48,8 +48,8 @@ export const CategoryComponent: React.FC<CategoryProps> = () => {
                     <button className={styles.button} onClick={handleAddCategory} >
                         Add+
                     </button>
-                    {/* 
-                    <button className={styles.button} onClick={() => { }}>
+
+                    {/* <button className={styles.button} onClick={() => { }}>
                         Delete
                     </button> */}
 

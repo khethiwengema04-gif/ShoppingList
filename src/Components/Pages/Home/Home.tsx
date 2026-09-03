@@ -8,6 +8,7 @@ import type { RootState } from '../../../store'
 import type { AppDispatch } from '../../../store'
 import { useDispatch } from 'react-redux'
 import { deleteCategory } from '../../../Features/category'
+import { editCategory } from '../../../Features/category'
 
 
 export const Home = () => {
@@ -25,6 +26,7 @@ export const Home = () => {
                         <Card key={link.id}
                             category={link}
                             onView={() => ({})}
+                            onEdit={() => ({})}
                             onDelete={() => {
                                 if (link.id) dispatch(deleteCategory(link.id))
                             }} />

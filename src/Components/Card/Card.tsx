@@ -13,10 +13,11 @@ interface CardProps {
     category: Category;
     onView: () => void;
     onDelete: () => void;
+    onEdit: () => void;
 }
 
 
-export const Card = ({ category, onDelete }: CardProps) => {
+export const Card = ({ category, onDelete, onEdit }: CardProps) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -37,6 +38,9 @@ export const Card = ({ category, onDelete }: CardProps) => {
 
                 <button onClick={onDelete} className={style.deletebutton}  >
                     Delete
+                </button>
+                <button onClick={onEdit} className={style.editbutton}  >
+                    Edit
                 </button>
 
 

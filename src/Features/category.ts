@@ -10,6 +10,7 @@ export interface Category {
 interface CategoryState {
     category: Category[];
     isSucess: boolean;
+    editingCategoryId: string | null;
     isLoading: boolean;
     error: string | null;
 }
@@ -19,6 +20,7 @@ const initialState: CategoryState = {
     isSucess: false,
     isLoading: false,
     error: null,
+    editingCategoryId: null,
 }
 
 
@@ -69,6 +71,30 @@ export const deleteCategory = createAsyncThunk(
 );
 
 
+
+
+//EDIT THUNK
+export const editCategory = createAsyncThunk(
+    "Category/editCategory",
+    async (editCategory: Category, { rejectWithValue }) => {
+        try {
+            const response = await fetch(
+                `http://localhost:3000/lists/${editCategory.id}`,
+                {
+                    method: "PUT",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(editCategory),
+                },
+            );
+            if (!response.ok) throw new Error("Failed to update category");
+            return (await response.json()) as Category;
+        } catch (error) {
+            return rejectWithValue((error as Error).message);
+        }
+    },
+);
+
+
 export const categorySlice = createSlice({
     name: 'category',
     initialState,
@@ -93,6 +119,13 @@ export const categorySlice = createSlice({
             .addCase(deleteCategory.fulfilled, (state, action: PayloadAction<string>) => {
                 state.isLoading = false;
                 state.category = state.category.filter((list) => list.id !== action.payload);
+            })
+            .addCase(editCategory.fulfilled, (state, action: PayloadAction<Category>) => {
+                state.isLoading = false;
+                state.category = state.category.map((list) =>
+                    list.id === action.payload.id ? action.payload : list,
+                );
+                state.editingCategoryId = null;
             });
 
     }

@@ -13,16 +13,20 @@ interface CardProps {
     category: Category;
     onView: () => void;
     onDelete: () => void;
-    onEdit: () => void;
+    // onEdit: () => void;
+    onShare: () => void;
 }
 
 
-export const Card = ({ category, onDelete, onEdit }: CardProps) => {
+export const Card = ({ category, onDelete, onShare }: CardProps) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const handleSubmitClick = () => {
         navigate(`/list/${category.id}`);
+    }
+    const handleSubmitClickShare = () => {
+        navigate(`/share/${category.id}`);
     }
     // const handleDelete = () => {
     //     dispatch(deleteCategory(category.id));
@@ -39,8 +43,8 @@ export const Card = ({ category, onDelete, onEdit }: CardProps) => {
                 <button onClick={onDelete} className={style.deletebutton}  >
                     Delete
                 </button>
-                <button onClick={onEdit} className={style.editbutton}  >
-                    Edit
+                <button onClick={handleSubmitClickShare} className={style.shareButton}  >
+                    Share
                 </button>
 
 

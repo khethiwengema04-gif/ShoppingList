@@ -33,7 +33,7 @@ export const ItemListThunk = createAsyncThunk(
     'ItemList/addItemThunk',
     async (newItemList: Omit<ItemList, 'id'>) => {
 
-        const response = await fetch('http://localhost:3000/items', {
+        const response = await fetch('http://localhost:3001/items', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -57,7 +57,7 @@ export const getItemListThunk = createAsyncThunk(
     async (ListId: string, api) => { // Added type string for ListId
         try {
             // Fix: Changed &{listId} to ${ListId} and wrapped in backticks (`)
-            const response = await fetch(`http://localhost:3000/items/${ListId}`, {
+            const response = await fetch(`http://localhost:3001/items/${ListId}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
@@ -81,7 +81,7 @@ export const deleteItemList = createAsyncThunk(
     "ItemList/deleteItemList",
     async (id: string, { rejectWithValue }) => {
         try {
-            const response = await fetch(`http://localhost:3000/items/${id}`, {
+            const response = await fetch(`http://localhost:3001/items/${id}`, {
                 method: "DELETE",
                 headers: { "Content-Type": "application/json" },
             });
@@ -99,7 +99,7 @@ export const editList = createAsyncThunk(
     async (editList: ItemList, { rejectWithValue }) => {
         try {
             const response = await fetch(
-                `http://localhost:3000/items/${editList.id}`,
+                `http://localhost:3001/items/${editList.id}`,
                 {
                     method: "PUT",
                     headers: { "Content-Type": "application/json" },

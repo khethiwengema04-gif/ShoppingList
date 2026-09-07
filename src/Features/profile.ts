@@ -21,7 +21,7 @@ const initialState: ProfileState = {
     error: null,
 };
 
-const BASE_API_URL = 'http://localhost:3000/users';
+const BASE_API_URL = 'http://localhost:3001/users';
 
 const getAuthenticatedUserId = (state: any): string | number | null => {
     return state.auth?.user?.id || null;

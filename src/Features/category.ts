@@ -32,7 +32,7 @@ export const categoryThunk = createAsyncThunk<
     "category/categoryThunk",
     async (newCategory, api) => {
         try {
-            const response = await fetch(`http://localhost:3000/lists`, {
+            const response = await fetch(`http://localhost:3001/lists`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -58,7 +58,7 @@ export const deleteCategory = createAsyncThunk(
     "Category/deleteCategory",
     async (id: string, { rejectWithValue }) => {
         try {
-            const response = await fetch(`http://localhost:3000/lists/${id}`, {
+            const response = await fetch(`http://localhost:3001/lists/${id}`, {
                 method: "DELETE",
                 headers: { "Content-Type": "application/json" },
             });
@@ -79,7 +79,7 @@ export const editCategory = createAsyncThunk(
     async (editCategory: Category, { rejectWithValue }) => {
         try {
             const response = await fetch(
-                `http://localhost:3000/lists/${editCategory.id}`,
+                `http://localhost:3001/lists/${editCategory.id}`,
                 {
                     method: "PUT",
                     headers: { "Content-Type": "application/json" },

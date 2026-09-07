@@ -23,7 +23,7 @@ export const loginThunk = createAsyncThunk(
     async (userDetail: { emailadress: string; password: Required<User>['password'] }, api) => {
         try {
             const results = await axios.get<User[]>
-                (`http://localhost:3000/users?emailadress=${userDetail.emailadress}&password=${userDetail.password}`
+                (`http://localhost:3001/users?emailadress=${userDetail.emailadress}&password=${userDetail.password}`
 
                 )
             if (results.data.length === 0) {

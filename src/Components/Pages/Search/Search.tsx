@@ -3,11 +3,15 @@
 import style from './Search.module.css'
 import { Searchbar } from './Searchbar'
 
-export const Search = () => {
+type Props = {
+    onSearch: (query: string) => void
+}
+
+export const Search: React.FC<Props> = ({ onSearch }) => {
     return (
         <div className={style['search-container']}>
 
-            <Searchbar />
+            <Searchbar onSearch={onSearch} />
 
         </div>
     )

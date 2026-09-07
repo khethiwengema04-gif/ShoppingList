@@ -62,6 +62,15 @@
       "cellphone": "0614444381",
       "verifypassword": "sne",
       "id": "ZNwJ_EmGVX4"
+    },
+    {
+      "fullnames": "simhle",
+      "lastname": "nzuza",
+      "emailadress": "simhle@gmail.com",
+      "password": "simhle",
+      "cellphone": "0214444365",
+      "verifypassword": "simhle",
+      "id": "QpahaYSiw4g"
     }
   ],
   "lists": [
@@ -304,6 +313,48 @@
     {
       "name": "Food",
       "id": "TyDC2po0oaE"
+    },
+    {
+      "name": "Drinks",
+      "id": "3uv9cBakPys"
+    },
+    {
+      "name": "JUICES",
+      "id": "BIbLrEPd09k"
+    },
+    {
+      "name": "Fruit",
+      "id": "_wMwkUTQLeQ"
+    },
+    {
+      "userId": "vnj8m0tN84k",
+      "name": "dggfh",
+      "id": "cMrtRvJrboM"
+    },
+    {
+      "name": "ygg",
+      "id": "jNPRDceq3HM"
+    },
+    {
+      "name": "c vcv",
+      "id": "1T5EJlnj6x0"
+    },
+    {
+      "name": "ggsdc",
+      "id": "oh1DUWBXwEc"
+    },
+    {
+      "name": "ggsdcfdfd",
+      "id": "KocuFYeWOgY"
+    },
+    {
+      "name": "cdx",
+      "id": "zPPrEO9fqiQ"
+    },
+    {
+      "userId": "vnj8m0tN84k",
+      "name": "gb",
+      "id": "cbsZ4_b0NGQ"
     }
   ],
   "items": [
@@ -1038,6 +1089,60 @@
       "quantity": 1,
       "optionalNote": "notes",
       "id": "kKFW1mHPXzc"
+    },
+    {
+      "name": "tyfr",
+      "quantity": 1,
+      "optionalNote": "tyut",
+      "id": "1mcxgJJA40U"
+    },
+    {
+      "name": "tyfr",
+      "quantity": 1,
+      "optionalNote": "tyut",
+      "id": "etVFJ3_ikxE"
+    },
+    {
+      "name": "fddfdf",
+      "quantity": 11,
+      "optionalNote": "",
+      "id": "iYR1k6sr70Y"
+    },
+    {
+      "name": "dfd",
+      "quantity": 1,
+      "optionalNote": "cszc ",
+      "id": "x1mSsDCX780"
+    },
+    {
+      "name": "xx",
+      "quantity": 2,
+      "optionalNote": "xx",
+      "id": "aMZGws-vkfQ"
+    },
+    {
+      "name": "Check",
+      "quantity": 2,
+      "optionalNote": "notes",
+      "id": "IJZH7-gtwU8"
+    },
+    {
+      "name": "Check",
+      "quantity": 4,
+      "optionalNote": "notesjhkmh",
+      "id": "ETO2SydKZNs"
+    },
+    {
+      "name": "wow",
+      "quantity": 4,
+      "optionalNote": "notesjhkmh",
+      "id": "Wzjpak1drio"
+    },
+    {
+      "name": "hmm",
+      "quantity": 8,
+      "optionalNote": "notesjhkmh",
+      "id": "9ColvWpcW3o"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

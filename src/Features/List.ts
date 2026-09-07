@@ -94,25 +94,25 @@ export const deleteItemList = createAsyncThunk(
 );
 
 //EDIT THUNK
-export const editList = createAsyncThunk(
-    "List/editList",
-    async (editList: ItemList, { rejectWithValue }) => {
-        try {
-            const response = await fetch(
-                `http://localhost:3001/items/${editList.id}`,
-                {
-                    method: "PUT",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(editList),
-                },
-            );
-            if (!response.ok) throw new Error("Failed to update item");
-            return (await response.json()) as ItemList;
-        } catch (error) {
-            return rejectWithValue((error as Error).message);
-        }
-    },
-);
+// export const editList = createAsyncThunk(
+//     "List/editList",
+//     async (editList: ItemList, { rejectWithValue }) => {
+//         try {
+//             const response = await fetch(
+//                 `http://localhost:3001/items/${editList.id}`,
+//                 {
+//                     method: "PUT",
+//                     headers: { "Content-Type": "application/json" },
+//                     body: JSON.stringify(editList),
+//                 },
+//             );
+//             if (!response.ok) throw new Error("Failed to update item");
+//             return (await response.json()) as ItemList;
+//         } catch (error) {
+//             return rejectWithValue((error as Error).message);
+//         }
+//     },
+// );
 
 
 
@@ -196,23 +196,23 @@ export const ItemListSlice = createSlice({
                 state.error = action.payload as string || 'Failed to delete item';
             })
 
-            .addCase(editList.pending, (state) => {
-                state.isLoading = true;
-            })
-            .addCase(editList.fulfilled, (state, action: PayloadAction<ItemList>) => {
-                state.isLoading = false;
-                state.itemList = state.itemList.map((item) =>
-                    item.id === action.payload.id ? action.payload : item,
-                );
-                state.editingItemId = null;
-                state.name = '';
-                state.quantity = 0;
-                state.optionalNote = '';
-            })
-            .addCase(editList.rejected, (state, action) => {
-                state.isLoading = false;
-                state.error = action.payload as string;
-            });
+            // .addCase(editList.pending, (state) => {
+            //     state.isLoading = true;
+            // })
+            // .addCase(editList.fulfilled, (state, action: PayloadAction<ItemList>) => {
+            //     state.isLoading = false;
+            //     state.itemList = state.itemList.map((item) =>
+            //         item.id === action.payload.id ? action.payload : item,
+            //     );
+            //     state.editingItemId = null;
+            //     state.name = '';
+            //     state.quantity = 0;
+            //     state.optionalNote = '';
+            // })
+            // .addCase(editList.rejected, (state, action) => {
+            //     state.isLoading = false;
+            //     state.error = action.payload as string;
+            // });
     }
 
 })

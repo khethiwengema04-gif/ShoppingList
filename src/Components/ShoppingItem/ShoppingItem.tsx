@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import style from './ShoppingItem.module.css'
 import { useDispatch, useSelector } from 'react-redux'
 import type { AppDispatch, RootState } from '../../store'
@@ -15,9 +15,16 @@ import { useParams } from 'react-router-dom';
 
 export const ShoppingItem: React.FC = () => {
     const dispatch = useDispatch<AppDispatch>();
-    const { name, quantity, optionalNote, itemList = [] } = useSelector((state: RootState) => state.list);
+    // const { name, quantity, optionalNote, itemList = [] } = useSelector((state: RootState) => state.list);
+   const{ itemList = [] } = useSelector((state: RootState) => state.list);
+    
+
     const { listId } = useParams<{ listId: string }>();
 
+      const [name, setName] = useState<string>('');
+       const [quantity, setQuantity] = useState<number>(0);
+         const [optionalNote, setOptionalNote] = useState<string>('');
+      
     const handleAddList = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 
@@ -44,7 +51,7 @@ export const ShoppingItem: React.FC = () => {
                         type="text"
                         placeholder='item name'
                         value={name}
-                        onChange={(e) => dispatch(AddName(e.target.value))}
+                        onChange={(e) => setName(e.target.value)}
                     />
 
                     <input
@@ -52,7 +59,7 @@ export const ShoppingItem: React.FC = () => {
                         type="number"
                         placeholder='0'
                         value={quantity}
-                        onChange={(e) => dispatch(AddQuantity(Number(e.target.value)))}
+                        onChange={(e) => setQuantity(Number(e.target.value))}
                     />
 
                     <input
@@ -60,7 +67,7 @@ export const ShoppingItem: React.FC = () => {
                         type="text"
                         placeholder='optional note'
                         value={optionalNote}
-                        onChange={(e) => dispatch(AddOptionalnote(e.target.value))}
+                        onChange={(e) => setOptionalNote(e.target.value)}
                     />
 
                     <button type="submit" className={style.button}>
@@ -69,7 +76,7 @@ export const ShoppingItem: React.FC = () => {
                 </div>
             </form>
 
-            {itemList.length === 0 ? (
+            {/* {itemList.length === 0 ? (
                 <p className={style.emptyState}>No items added yet.</p>
             ) : (
                 itemList.map((item: any, index: number) => (
@@ -83,7 +90,7 @@ export const ShoppingItem: React.FC = () => {
                         )}
                     </div>
                 ))
-            )}
+            )} */}
         </>
     )
 }

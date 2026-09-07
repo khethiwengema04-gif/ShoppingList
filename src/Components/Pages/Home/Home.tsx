@@ -14,11 +14,13 @@ import { editCategory } from '../../../Features/category'
 export const Home = () => {
     const category = useSelector((state: RootState) => state.category)
     const dispatch = useDispatch<AppDispatch>();
-
+    const handleSearch = (query: string) => {
+        console.log("User searched for:", query);
+    };
     return (
         <div>
             <Navbar />
-            <Search />
+            <Search onSearch={handleSearch} />
             <CategoryList onDelete={() => { }} onEdit={() => { }} />
             <div>
                 {
@@ -26,7 +28,7 @@ export const Home = () => {
                         <Card key={link.id}
                             category={link}
                             onView={() => ({})}
-                            onEdit={() => ({})}
+                            onShare={() => ({})}
                             onDelete={() => {
                                 if (link.id) dispatch(deleteCategory(link.id))
                             }} />

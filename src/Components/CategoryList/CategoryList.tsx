@@ -10,7 +10,9 @@ import type { Category } from '../../Features/category'
 interface CategoryProps {
     onDelete: (id: number) => void
     onEdit: (id: number) => void
+    // onShare: (id: number) => void
 }
+
 
 export const CategoryComponent: React.FC<CategoryProps> = () => {
     const dispatch = useDispatch() as any;
@@ -48,6 +50,10 @@ export const CategoryComponent: React.FC<CategoryProps> = () => {
                     <button className={styles.button} onClick={handleAddCategory} >
                         Add+
                     </button>
+                    {/* <button className={styles.button} onClick={handleShareCategory} >
+                        Share
+                    </button> */}
+
 
                     {/* <button className={styles.button} onClick={() => { }}>
                         Delete

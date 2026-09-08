@@ -23,7 +23,7 @@ const initialState: CategoryState = {
     editingCategoryId: null,
 }
 
-
+// Create list thunk
 export const categoryThunk = createAsyncThunk<
     Category,
     Omit<Category, "id">,
@@ -49,6 +49,28 @@ export const categoryThunk = createAsyncThunk<
             return api.rejectWithValue(error.message || 'Something is wrong');
         }
     }
+);
+
+
+//View only the category of the user
+
+export const getCategory = createAsyncThunk(
+    "Category/getCategoryThunk",
+    async (userId: string, { rejectWithValue }) => {
+        try {
+            const response = await fetch(
+                `http://localhost:3001/categories?userId=${userId}`,
+                {
+                    method: "GET",
+                    headers: { "Content-Type": "application/json" },
+                },
+            );
+            if (!response.ok) throw new Error("Failed to fetch category");
+            return (await response.json()) as Category[];
+        } catch (error) {
+            return rejectWithValue((error as Error).message);
+        }
+    },
 );
 
 
@@ -116,6 +138,14 @@ export const categorySlice = createSlice({
                 state.error = action.payload ?? 'Something went wrong';
             })
 
+            .addCase(getCategory.pending, (state) => {
+                state.isLoading = true;
+                state.error = null;
+            })
+            .addCase(getCategory.fulfilled, (state, action: PayloadAction<Category[]>) => {
+                state.isLoading = false;
+                state.category = action.payload;
+            })
             .addCase(deleteCategory.fulfilled, (state, action: PayloadAction<string>) => {
                 state.isLoading = false;
                 state.category = state.category.filter((list) => list.id !== action.payload);

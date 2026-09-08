@@ -16,6 +16,7 @@ const initialState: loginState = {
     isloading: false,
     error: null,
 }
+
 //thunk
 
 export const loginThunk = createAsyncThunk(

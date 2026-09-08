@@ -3,7 +3,8 @@ import style from './List.module.css'
 import { ItemCard } from '../../ItemCard/ItemCard'
 import type { AppDispatch, RootState } from '../../../store'
 import { useDispatch, useSelector } from 'react-redux'
-import { getItemListThunk, deleteItemList, setEditingItem,  } from '../../../Features/List'
+import { getItemListThunk, deleteItemList, setEditingItem, } from '../../../Features/List'
+import { useEffect } from 'react'
 
 
 export const List = () => {
@@ -11,9 +12,9 @@ export const List = () => {
 
     const dispatch = useAppDispatch();
 
-    // useEffect(() => {
-    //     dispatch(getItemListThunk(''));
-    // }, [dispatch]);
+    useEffect(() => {
+        dispatch(getItemListThunk(''));
+    }, [dispatch]);
 
     const { itemList, editingItemId, name, quantity, optionalNote } = useSelector((state: RootState) => state.list)
 

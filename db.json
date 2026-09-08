@@ -71,6 +71,15 @@
       "cellphone": "0214444365",
       "verifypassword": "simhle",
       "id": "QpahaYSiw4g"
+    },
+    {
+      "fullnames": "Nokuphiwa",
+      "lastname": "shange",
+      "emailadress": "Phiwa02@gmail.com",
+      "password": "Phiwa",
+      "cellphone": "0897654321",
+      "verifypassword": "Phiwa",
+      "id": "4niJkgJaZsc"
     }
   ],
   "lists": [
@@ -365,6 +374,69 @@
       "userId": "vnj8m0tN84k",
       "name": "apple",
       "id": "ppJr8-6xjn4"
+    },
+    {
+      "name": "Apple",
+      "id": "VAqLi9zLIZE"
+    },
+    {
+      "name": "Apple",
+      "id": "NGUf78FJN9M"
+    },
+    {
+      "userId": "vnj8m0tN84k",
+      "name": "Spinach",
+      "id": "cCc5tDl5a8Q"
+    },
+    {
+      "userId": "vnj8m0tN84k",
+      "name": "Spinach",
+      "id": "vL6nE7P-1js"
+    },
+    {
+      "userId": "vnj8m0tN84k",
+      "name": "Spinach",
+      "id": "xIH9pvMK01c"
+    },
+    {
+      "userId": "",
+      "name": "APPLE",
+      "id": "0BTjd82zGZw"
+    },
+    {
+      "userId": "",
+      "name": "APPLE",
+      "id": "xOGB8IICWBM"
+    },
+    {
+      "userId": "",
+      "name": "APPLE",
+      "id": "AfFVBeLD8fw"
+    },
+    {
+      "userId": "",
+      "name": "klj",
+      "id": "cLG72q3JnPg"
+    },
+    {
+      "userId": "",
+      "name": ";kl",
+      "id": "Clp-1Y8o_TQ"
+    },
+    {
+      "userId": "",
+      "name": "khe",
+      "id": "o_9yptqkxfU"
+    },
+    {
+      "userId": "",
+      "name": "gg",
+      "id": "i4tqb_g56HM"
+    },
+    {
+      "userId": "",
+      "name": "h",
+      "id": "dx6z38HnScU"
     }
   ],
   "items": [
@@ -381,708 +453,6 @@
       "id": "9EBF1VesfsQ"
     },
     {
-      "name": "Grapes",
-      "quantity": 1,
-      "optionalNote": "green",
-      "id": "Q0r8v65tano"
-    },
-    {
-      "name": "Grapes",
-      "quantity": 1,
-      "optionalNote": "green",
-      "id": "xBVr-APd-I0"
-    },
-    {
-      "name": "iu8y",
-      "quantity": 1,
-      "optionalNote": "lkj",
-      "id": "FBIIZiEAsVg"
-    },
-    {
-      "name": "klml",
-      "quantity": 2,
-      "optionalNote": "jkj",
-      "id": "bJIzMUNHODo"
-    },
-    {
-      "name": "m,huj",
-      "quantity": 1,
-      "optionalNote": "fthg",
-      "id": "OvOYqP0bsu8"
-    },
-    {
-      "name": "m,huj",
-      "quantity": 1,
-      "optionalNote": "fthg",
-      "id": "_jsoqzVuQlA"
-    },
-    {
-      "name": "socks",
-      "quantity": 2,
-      "optionalNote": "blue",
-      "id": "MKr754PAn4g"
-    },
-    {
-      "name": "socks",
-      "quantity": 2,
-      "optionalNote": "blue",
-      "id": "0tbp7T8emxA"
-    },
-    {
-      "name": "socks",
-      "quantity": 2,
-      "optionalNote": "blue",
-      "id": "Er8p9lmw9B0"
-    },
-    {
-      "name": "lkiklkn",
-      "quantity": 1,
-      "optionalNote": "hgf",
-      "id": "_mNZyzPZtU8"
-    },
-    {
-      "name": "lkiklkn",
-      "quantity": 1,
-      "optionalNote": "hgf",
-      "id": "H9NVI1nd__0"
-    },
-    {
-      "name": "Rice",
-      "quantity": 5,
-      "optionalNote": "Buy at Spar",
-      "id": "unALjRBsRvw"
-    },
-    {
-      "name": "Rice",
-      "quantity": 5,
-      "optionalNote": "Buy at Spar",
-      "id": "2CB6fbfKPGw"
-    },
-    {
-      "name": "Rice",
-      "quantity": 5,
-      "optionalNote": "Buy at Spar",
-      "id": "zB9lh0RKLKc"
-    },
-    {
-      "name": "Rice",
-      "quantity": 5,
-      "optionalNote": "Buy at Spar",
-      "id": "X9qBaJN9UgU"
-    },
-    {
-      "name": "Rice",
-      "quantity": 5,
-      "optionalNote": "Buy at Spar",
-      "id": "mogZy9fWBg4"
-    },
-    {
-      "name": "Rice",
-      "quantity": 5,
-      "optionalNote": "Buy at Spar",
-      "id": "vFK6vM7S6oY"
-    },
-    {
-      "name": "",
-      "quantity": 0,
-      "optionalNote": "",
-      "id": "4-PvzrHcJmo"
-    },
-    {
-      "name": "samsung",
-      "quantity": 2,
-      "optionalNote": "White",
-      "id": "HLOmeKZX99o"
-    },
-    {
-      "name": "Grapes",
-      "quantity": 2,
-      "optionalNote": "Dark",
-      "id": "Bmn4PhVyl2E"
-    },
-    {
-      "name": "socks",
-      "quantity": 1,
-      "optionalNote": "blue",
-      "id": "vje3nB1baas"
-    },
-    {
-      "name": "lxwdioedj",
-      "quantity": 1,
-      "optionalNote": "iowjd",
-      "id": "aZyie1rmzG0"
-    },
-    {
-      "name": "kjh",
-      "quantity": 1,
-      "optionalNote": "i",
-      "id": "WbbsOnsEg8g"
-    },
-    {
-      "name": "kjsx",
-      "quantity": 1,
-      "optionalNote": "kk",
-      "id": "aUk5Zop88xo"
-    },
-    {
-      "name": "add",
-      "quantity": 4,
-      "optionalNote": "weawfs",
-      "id": "rD_ewWvXTm8"
-    },
-    {
-      "name": "ewf",
-      "quantity": 4,
-      "optionalNote": "weqerrw",
-      "id": "MExTTFmxTwM"
-    },
-    {
-      "name": "qws",
-      "quantity": 3,
-      "optionalNote": "QE21E",
-      "id": "f_uDfP5Mibk"
-    },
-    {
-      "name": "qws",
-      "quantity": 3,
-      "optionalNote": "QE21EQWD",
-      "id": "rPgJWNx_dI4"
-    },
-    {
-      "name": "qwsWEEW",
-      "quantity": 3,
-      "optionalNote": "QE21EQWDASDWSD",
-      "id": "IMNuSzw25s4"
-    },
-    {
-      "name": "qwsWEEW",
-      "quantity": 3,
-      "optionalNote": "QE21EQWDASDWSD",
-      "id": "StqjYtp4Rj8"
-    },
-    {
-      "name": "3QQ",
-      "quantity": 3,
-      "optionalNote": "WQEQE",
-      "id": "NOXfTg6gll8"
-    },
-    {
-      "name": "WQEHW",
-      "quantity": 33,
-      "optionalNote": "WQEQE",
-      "id": "PGRWAzJ1Y_o"
-    },
-    {
-      "name": "WQEHW",
-      "quantity": 33,
-      "optionalNote": "WQEQE",
-      "id": "q4aMEjZrpE0"
-    },
-    {
-      "name": "WQEHW",
-      "quantity": 33,
-      "optionalNote": "WQEQE",
-      "id": "xpBsobXiDoI"
-    },
-    {
-      "name": "WQEHW",
-      "quantity": 33,
-      "optionalNote": "WQEQE",
-      "id": "mgyt3kr5xgc"
-    },
-    {
-      "name": "WQEHW",
-      "quantity": 33,
-      "optionalNote": "WQEQE",
-      "id": "MnDQ_7Yw7t8"
-    },
-    {
-      "name": "kiq",
-      "quantity": 1,
-      "optionalNote": "klqs",
-      "id": "2n0a6y0ZIjg"
-    },
-    {
-      "name": "kiq",
-      "quantity": 1,
-      "optionalNote": "klqs",
-      "id": "7JpuWAtDKRQ"
-    },
-    {
-      "name": "kiq",
-      "quantity": 1,
-      "optionalNote": "klqs",
-      "id": "mTy492-cClY"
-    },
-    {
-      "name": "kiq",
-      "quantity": 1,
-      "optionalNote": "klqs",
-      "id": "7U4OGcYr228"
-    },
-    {
-      "name": "kiq",
-      "quantity": 1,
-      "optionalNote": "klqs",
-      "id": "UUNvDB2Jy5o"
-    },
-    {
-      "name": "uuu",
-      "quantity": 1,
-      "optionalNote": "uv",
-      "id": "XFGZdulk5-Y"
-    },
-    {
-      "name": "uuSSS",
-      "quantity": 1,
-      "optionalNote": "uv",
-      "id": "BtFAxCWtw8U"
-    },
-    {
-      "name": "uuSSS",
-      "quantity": 1,
-      "optionalNote": "uv",
-      "id": "T2Y_9Ek0clQ"
-    },
-    {
-      "name": "uuSSS",
-      "quantity": 1,
-      "optionalNote": "uv",
-      "id": "MQ_a2Kp6nuw"
-    },
-    {
-      "name": "uuSSS",
-      "quantity": 1,
-      "optionalNote": "uv",
-      "id": "W41ShwTHxx0"
-    },
-    {
-      "name": "j",
-      "quantity": 1,
-      "optionalNote": "",
-      "id": "RrNbfsjeLpk"
-    },
-    {
-      "name": "jersey",
-      "quantity": 1,
-      "optionalNote": "red",
-      "id": "S6zWQcB-rSk"
-    },
-    {
-      "name": "jolkj",
-      "quantity": 2,
-      "optionalNote": "klj",
-      "id": "scYrT764X-o"
-    },
-    {
-      "name": "lkjiqw",
-      "quantity": 1,
-      "optionalNote": "l;kqs",
-      "id": "qU3_4FbFzXo"
-    },
-    {
-      "name": "lkjiqw",
-      "quantity": 1,
-      "optionalNote": "l;kqs",
-      "id": "hDgc3K6HBdg"
-    },
-    {
-      "name": "lkjiqw",
-      "quantity": 1,
-      "optionalNote": "l;kqs",
-      "id": "3LycmLRlIfY"
-    },
-    {
-      "name": "lkjiqw",
-      "quantity": 1,
-      "optionalNote": "l;kqs",
-      "id": "Dyzqo3LA83g"
-    },
-    {
-      "name": "lkjiqw",
-      "quantity": 1,
-      "optionalNote": "l;kqs",
-      "id": "MnQU1e88JcQ"
-    },
-    {
-      "name": "lkjiqw",
-      "quantity": 1,
-      "optionalNote": "l;kqs",
-      "id": "9i23rCwCHAQ"
-    },
-    {
-      "name": "lkjiqw",
-      "quantity": 1,
-      "optionalNote": "l;kqs",
-      "id": "fknf2m8FyEs"
-    },
-    {
-      "name": "lkjiqw",
-      "quantity": 1,
-      "optionalNote": "l;kqs",
-      "id": "9dKsRZoT8VI"
-    },
-    {
-      "name": "lkjiqw",
-      "quantity": 1,
-      "optionalNote": "l;kqs",
-      "id": "JsIxgIq0xD4"
-    },
-    {
-      "name": "lkjiqw",
-      "quantity": 1,
-      "optionalNote": "l;kqs",
-      "id": "R957Wcbg8lI"
-    },
-    {
-      "name": "lkjiqw",
-      "quantity": 1,
-      "optionalNote": "l;kqs",
-      "id": "PosgxL4WvlE"
-    },
-    {
-      "name": "nil",
-      "quantity": 1,
-      "optionalNote": "om",
-      "id": "fBQ3e20CiqQ"
-    },
-    {
-      "name": "nil",
-      "quantity": 1,
-      "optionalNote": "om",
-      "id": "JXknUm-tDes"
-    },
-    {
-      "name": "nil",
-      "quantity": 1,
-      "optionalNote": "om",
-      "id": "HK7oIQLNfoo"
-    },
-    {
-      "name": "nil",
-      "quantity": 1,
-      "optionalNote": "om",
-      "id": "5Kjx8XyUEAU"
-    },
-    {
-      "name": "nil",
-      "quantity": 1,
-      "optionalNote": "om",
-      "id": "tEvwrNWPv04"
-    },
-    {
-      "name": "nil",
-      "quantity": 1,
-      "optionalNote": "om",
-      "id": "Y0QpanJh4aM"
-    },
-    {
-      "name": "nil",
-      "quantity": 1,
-      "optionalNote": "om",
-      "id": "9sTyJuuo0YQ"
-    },
-    {
-      "name": "nil",
-      "quantity": 1,
-      "optionalNote": "om",
-      "id": "v7mKA7RFMPQ"
-    },
-    {
-      "name": "nil",
-      "quantity": 1,
-      "optionalNote": "om",
-      "id": "dbR0QIwxSw4"
-    },
-    {
-      "name": "nil",
-      "quantity": 1,
-      "optionalNote": "om",
-      "id": "n-RYDI9XwNo"
-    },
-    {
-      "name": "nil",
-      "quantity": 1,
-      "optionalNote": "om",
-      "id": "eXBIpkv6f_Q"
-    },
-    {
-      "name": "ukudla",
-      "quantity": 1,
-      "optionalNote": "beef",
-      "id": "cdqR1Cdoe1I"
-    },
-    {
-      "name": "ukudla",
-      "quantity": 1,
-      "optionalNote": "beef",
-      "id": "SfnKLIkiW5I"
-    },
-    {
-      "name": "ukudla",
-      "quantity": 1,
-      "optionalNote": "beef",
-      "id": "KJLk3rAR1Mk"
-    },
-    {
-      "name": "ukudla",
-      "quantity": 1,
-      "optionalNote": "beef",
-      "id": "90lNgkS91XE"
-    },
-    {
-      "name": "ukudla",
-      "quantity": 1,
-      "optionalNote": "beef",
-      "id": "ZVIIrleTLkA"
-    },
-    {
-      "name": "ukudla",
-      "quantity": 1,
-      "optionalNote": "beef",
-      "id": "Naw73HsXTf0"
-    },
-    {
-      "name": "ukudla",
-      "quantity": 1,
-      "optionalNote": "beef",
-      "id": "BDCEpPODXQU"
-    },
-    {
-      "name": "ukudla",
-      "quantity": 1,
-      "optionalNote": "beef",
-      "id": "WDHKp6PVFx8"
-    },
-    {
-      "name": "ukudla",
-      "quantity": 1,
-      "optionalNote": "beef",
-      "id": "ubgB0isyxok"
-    },
-    {
-      "name": "ukudla",
-      "quantity": 1,
-      "optionalNote": "beef",
-      "id": "F_IwpwDzHVM"
-    },
-    {
-      "name": "ukudla",
-      "quantity": 1,
-      "optionalNote": "beef",
-      "id": "x-ANTCtACZQ"
-    },
-    {
-      "name": "ukudla",
-      "quantity": 1,
-      "optionalNote": "beef",
-      "id": "nbvN0eBTde0"
-    },
-    {
-      "name": "ukudla",
-      "quantity": 1,
-      "optionalNote": "beef",
-      "id": "xuh-0lebjoQ"
-    },
-    {
-      "name": "ukudla",
-      "quantity": 1,
-      "optionalNote": "beef",
-      "id": "Vx1MRBD2Ea4"
-    },
-    {
-      "name": "ukudla",
-      "quantity": 1,
-      "optionalNote": "beef",
-      "id": "lHxK2ic8xNQ"
-    },
-    {
-      "name": "ukudla",
-      "quantity": 1,
-      "optionalNote": "beef",
-      "id": "21oLs5Jqa4U"
-    },
-    {
-      "name": "ukudla",
-      "quantity": 1,
-      "optionalNote": "beef",
-      "id": "UGsnN7r4AXo"
-    },
-    {
-      "name": "ukudla",
-      "quantity": 1,
-      "optionalNote": "beef",
-      "id": "GIuvgzz73Cg"
-    },
-    {
-      "name": "kjjk",
-      "quantity": 3,
-      "optionalNote": "lk",
-      "id": "O-EAzbeVCbI"
-    },
-    {
-      "name": "kjjk",
-      "quantity": 3,
-      "optionalNote": "lk",
-      "id": "gp3cS8hnRF4"
-    },
-    {
-      "name": "kjjk",
-      "quantity": 3,
-      "optionalNote": "lk",
-      "id": "bx1ARdKYXDE"
-    },
-    {
-      "name": "lkjo",
-      "quantity": 1,
-      "optionalNote": "kljo",
-      "id": "FLN2PNRt-VA"
-    },
-    {
-      "name": "lkjo",
-      "quantity": 1,
-      "optionalNote": "kljo",
-      "id": "FkpyU4JLUis"
-    },
-    {
-      "name": "lkjo",
-      "quantity": 1,
-      "optionalNote": "kljo",
-      "id": "MZCTPDi3r4s"
-    },
-    {
-      "name": "lkjo",
-      "quantity": 1,
-      "optionalNote": "kljo",
-      "id": "d_8eiB0GkNQ"
-    },
-    {
-      "name": "lkjo",
-      "quantity": 1,
-      "optionalNote": "kljo",
-      "id": "zj2g9OmfY_w"
-    },
-    {
-      "name": "lkjo",
-      "quantity": 1,
-      "optionalNote": "kljo",
-      "id": "rnH56IxU7C4"
-    },
-    {
-      "name": "lkjo",
-      "quantity": 1,
-      "optionalNote": "kljo",
-      "id": "Pe3LRFHDCSQ"
-    },
-    {
-      "name": "lkjo",
-      "quantity": 1,
-      "optionalNote": "kljo",
-      "id": "eYZv7LqB1pM"
-    },
-    {
-      "name": "lkjo",
-      "quantity": 1,
-      "optionalNote": "kljo",
-      "id": "VmedcgFs0Fg"
-    },
-    {
-      "name": "lkjo",
-      "quantity": 1,
-      "optionalNote": "kljo",
-      "id": "AGT4QP7xoRU"
-    },
-    {
-      "name": "lkjo",
-      "quantity": 1,
-      "optionalNote": "kljo",
-      "id": "Gam3gMu8_PI"
-    },
-    {
-      "name": "lkjo",
-      "quantity": 1,
-      "optionalNote": "kljo",
-      "id": "2fTGWMtbnxQ"
-    },
-    {
-      "name": "lkjo",
-      "quantity": 1,
-      "optionalNote": "kljo",
-      "id": "Ne7lCL0Uh1k"
-    },
-    {
-      "name": "lkjo",
-      "quantity": 1,
-      "optionalNote": "kljo",
-      "id": "Fo25Jzktd6c"
-    },
-    {
-      "name": "lkjo",
-      "quantity": 1,
-      "optionalNote": "kljo",
-      "id": "afKIf3MNrZM"
-    },
-    {
-      "name": "lkjo",
-      "quantity": 1,
-      "optionalNote": "kljo",
-      "id": "4Jy5JwQzhto"
-    },
-    {
-      "name": "lkjo",
-      "quantity": 1,
-      "optionalNote": "kljo",
-      "id": "XfnG5cZVWIE"
-    },
-    {
-      "name": "lkjo",
-      "quantity": 1,
-      "optionalNote": "kljo",
-      "id": "vxiwbNOtHtU"
-    },
-    {
-      "name": "lkjo",
-      "quantity": 1,
-      "optionalNote": "kljo",
-      "id": "4osF3seW_gQ"
-    },
-    {
-      "name": "lkjo",
-      "quantity": 1,
-      "optionalNote": "kljo",
-      "id": "WBPAvpGr_iI"
-    },
-    {
-      "name": "lkjo",
-      "quantity": 1,
-      "optionalNote": "kljo",
-      "id": "lGu0JqVUKFg"
-    },
-    {
-      "name": "lkjo",
-      "quantity": 1,
-      "optionalNote": "kljo",
-      "id": "vVTWeIkV4gc"
-    },
-    {
-      "name": "lkjo",
-      "quantity": 1,
-      "optionalNote": "kljo",
-      "id": "eL4ctIImk_I"
-    },
-    {
-      "name": "ioj",
-      "quantity": 1,
-      "optionalNote": "jk",
-      "id": "4nUwtgMCcBo"
-    },
-    {
-      "name": "ioj",
-      "quantity": 1,
-      "optionalNote": "jk",
-      "id": "5BRStO63vDo"
-    },
-    {
       "name": "samsung",
       "quantity": 2,
       "optionalNote": "grey",
@@ -1093,60 +463,6 @@
       "quantity": 2,
       "optionalNote": "grey",
       "id": "YRB-CvOXsIg"
-    },
-    {
-      "name": "hh",
-      "quantity": 1,
-      "optionalNote": "notes",
-      "id": "kKFW1mHPXzc"
-    },
-    {
-      "name": "tyfr",
-      "quantity": 1,
-      "optionalNote": "tyut",
-      "id": "1mcxgJJA40U"
-    },
-    {
-      "name": "tyfr",
-      "quantity": 1,
-      "optionalNote": "tyut",
-      "id": "etVFJ3_ikxE"
-    },
-    {
-      "name": "fddfdf",
-      "quantity": 11,
-      "optionalNote": "",
-      "id": "iYR1k6sr70Y"
-    },
-    {
-      "name": "dfd",
-      "quantity": 1,
-      "optionalNote": "cszc ",
-      "id": "x1mSsDCX780"
-    },
-    {
-      "name": "xx",
-      "quantity": 2,
-      "optionalNote": "xx",
-      "id": "aMZGws-vkfQ"
-    },
-    {
-      "name": "Check",
-      "quantity": 2,
-      "optionalNote": "notes",
-      "id": "IJZH7-gtwU8"
-    },
-    {
-      "name": "orange",
-      "quantity": 2,
-      "optionalNote": "clean",
-      "id": "CWQjxCYqeR4"
-    },
-    {
-      "name": "orange",
-      "quantity": 2,
-      "optionalNote": "clean",
-      "id": "uZ8fXvBxrxw"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

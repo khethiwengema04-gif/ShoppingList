@@ -20,3 +20,20 @@
     height: 30px;
     border-radius: 15px;
 }
+
+.sortByImg {
+    height: 30px;
+    width: 30px;
+    /* margin-left: 80px;
+    margin-top: 50px;
+    align-items: center;
+    border: solid rgb(214, 100, 59); */
+
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+
+}

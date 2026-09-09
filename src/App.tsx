@@ -1,4 +1,3 @@
-import React from 'react'
 import Log from './Components/Pages/LogIn/Log'
 import { Route, Routes } from 'react-router-dom'
 import { Home } from './Components/Pages/Home/Home'
@@ -19,12 +18,9 @@ function App() {
                 {/* <Route path="/profilepage" element={<Profile />} /> */}
                 <Route path="/list/:listId" element={<List />} />
             </Routes>
-
-
         </>
 
     )
 }
-
 
 export default App

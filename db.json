@@ -89,6 +89,15 @@
       "cellphone": "98764356567",
       "verifypassword": "123456",
       "id": "Uv728Phb0xM"
+    },
+    {
+      "fullnames": "Amahle",
+      "lastname": "Dlamini",
+      "emailadress": "amahle@gmail.com",
+      "password": "mahle",
+      "cellphone": "0783445",
+      "verifypassword": "mahle",
+      "id": "wXBQQvtEXaQ"
     }
   ],
   "lists": [
@@ -506,6 +515,16 @@
       "userId": "",
       "name": "rezfe",
       "id": "Qs45MK6U5aU"
+    },
+    {
+      "userId": "vnj8m0tN84k",
+      "name": "apple",
+      "id": "DcwBN2Fmgfo"
+    },
+    {
+      "userId": "",
+      "name": "Vegitables",
+      "id": "vKFfIwMxPb8"
     }
   ],
   "items": [
@@ -542,6 +561,14 @@
       "quantity": 1,
       "optionalNote": "",
       "id": "RDJS93RVVe0"
+    },
+    {
+      "id": "hmkHZnEJUb0",
+      "name": "Grapes",
+      "userId": "",
+      "listId": "vKFfIwMxPb8",
+      "quantity": 13,
+      "optionalNote": "pack"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

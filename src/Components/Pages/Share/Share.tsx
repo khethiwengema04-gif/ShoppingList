@@ -59,13 +59,13 @@ export const SharedListPage = () => {
         <div className={styles.page}>
             <div className={styles.container}>
 
-                {/* Header */}
+
                 <div className={styles.header}>
                     <h1 className={styles.title}>{list.name}</h1>
                     <p className={styles.subtitle}>Shared shopping list</p>
                 </div>
 
-                {/* Info row */}
+
                 <div className={styles.info}>
                     <div className={styles.badge}>
                         <span>Category</span>

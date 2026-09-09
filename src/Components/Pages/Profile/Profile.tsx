@@ -8,10 +8,9 @@ import { useEffect, useState } from 'react'
 
 const Profile: React.FC = () => {
     const navigate = useNavigate();
-    // Use AppDispatch to avoid TypeScript middleware type errors
+
     const dispatch = useDispatch<AppDispatch>();
 
-    // Grab authentication session and profile data from global state
     const Session = useSelector((state: RootState) => state.login.user);
     const profileState = useSelector((state: RootState) => state.profile);
 
@@ -25,15 +24,13 @@ const Profile: React.FC = () => {
     const [cellphone, setCellphone] = useState<string>('');
     const [password, setPassword] = useState<string>('');
 
-    // 1. Fetch Profile Data dynamically when the user session exists
     useEffect(() => {
         if (Session?.id) {
-            // Pass the logged-in user id to retrieve their corresponding profile
+
             dispatch(fetchProfileData());
         }
     }, [dispatch, Session?.id]);
 
-    // 2. Hydrate local states once the Redux profile data is fetched
     useEffect(() => {
         if (profileState) {
             setFullnames(profileState.fullname || '');
@@ -56,12 +53,12 @@ const Profile: React.FC = () => {
                 password: password
             };
             dispatch(updateProfileData(updatedData));
-            setIsEditable(false); // Close edit view
+            setIsEditable(false);
         }
     };
 
     const handleLogout = () => {
-        // Clear profile storage from Redux on logout if necessary
+
         dispatch(clearProfileStore());
         navigate('/');
     };
@@ -72,7 +69,7 @@ const Profile: React.FC = () => {
                 <h1 className={styles.tittle}>MY PROFILE</h1>
                 <img src={profileIcon} alt='profile' className={styles.profileImg} />
 
-                {/* Form fields display dynamically based on whether edit state is active */}
+
                 <div className={styles.fieldGroup}>
                     <label>First Names:</label>
                     {isEditable ? (
@@ -110,7 +107,7 @@ const Profile: React.FC = () => {
                 </div>
             </div>
 
-            {/* Action Buttons */}
+
             <div className={styles.actions}>
                 {isEditable ? (
                     <>

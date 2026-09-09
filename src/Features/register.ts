@@ -46,7 +46,6 @@ export const registerThunk = createAsyncThunk(
 )
 
 
-
 export const registerSlice = createSlice({
     name: 'register',
     initialState,

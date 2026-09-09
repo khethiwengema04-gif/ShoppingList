@@ -1,4 +1,6 @@
 import { createSlice, createAsyncThunk, type PayloadAction } from '@reduxjs/toolkit';
+import type { User } from './register';
+import type { RootState } from '../store';
 
 export interface ProfileState {
     id?: number | string;
@@ -23,13 +25,21 @@ const initialState: ProfileState = {
 
 const BASE_API_URL = 'http://localhost:3001/users';
 
-const getAuthenticatedUserId = (state: any): string | number | null => {
-    return state.auth?.user?.id || null;
+const getAuthenticatedUserId = (state: any): string | null | number => {
+    if (state.login?.user?.id) {
+        return state.auth?.user?.id || null;
+    }
+    const savedUser = localStorage.getItem('user');
+    if (savedUser) {
+        const parsedUser = JSON.parse(savedUser);
+        return parsedUser.id || null;
+    }
+    return null;
 };
 
 // READ: Fetch current data
-export const fetchProfileData = createAsyncThunk(
-    'profile/fetchProfileData',
+export const fetchProfileData = createAsyncThunk<User, void, { state: RootState; rejectValue: string }
+>('profile/fetchProfileData',
     async (_, { getState, rejectWithValue }) => {
         try {
             const state = getState() as any;

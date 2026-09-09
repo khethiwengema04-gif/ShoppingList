@@ -4,18 +4,20 @@ import { useDispatch, useSelector } from 'react-redux'
 import type { RootState } from '../../store'
 import { categoryThunk } from '../../Features/category'
 import type { Category } from '../../Features/category'
-import SortBy from '../../Assets/SortBy.png'
+// import SortBy from '../../Assets/SortBy.png'
 
 
 
 interface CategoryProps {
     onDelete: (id: number) => void
     onEdit: (id: number) => void
+    onSort: () => void;
+
     // onShare: (id: number) => void
 }
 
 
-export const CategoryComponent: React.FC<CategoryProps> = () => {
+export const CategoryComponent: React.FC<CategoryProps> = ({ onSort }) => {
     const dispatch = useDispatch() as any;
 
     // const category = useSelector((state: RootState) => state.category);
@@ -69,7 +71,15 @@ export const CategoryComponent: React.FC<CategoryProps> = () => {
                     {/* <button className={styles.button} onClick={handleShareCategory} >
                         Share
                     </button> */}
-                    <img src={SortBy} alt='Sort by' className={styles.sortByImg} />
+
+
+
+                    <select className={styles.sortByImg} onClick={onSort}>
+                        <option value=" ">Sort by</option>
+                        <option value="name">Category Name</option>
+                        <option value="date">Added date</option>
+
+                    </select>
 
 
 

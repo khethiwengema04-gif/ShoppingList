@@ -25,8 +25,27 @@ export const Card = ({ category, onDelete, onShare }: CardProps) => {
     const handleSubmitClick = () => {
         navigate(`/list/${category.id}`);
     }
-    const handleSubmitClickShare = () => {
-        navigate(`/share/${category.id}`);
+    // const handleSubmitClickShare = () => {
+    //     navigate(`/share/${category.id}`);
+    // }
+
+    const handleSubmitClickShare = async (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.stopPropagation()
+        const shareUrl = `${window.location.origin}/shared-list/${category.id}`
+        try {
+            if (navigator.share) {
+                await navigator.share({
+                    title: category.name,
+                    text: `Check out my shopping list: ${category.name}`,
+                    url: shareUrl,
+                })
+            } else {
+                await navigator.clipboard.writeText(shareUrl)
+                alert('Link copied to clipboard!')
+            }
+        } catch (error) {
+            console.log('Share cancelled', error)
+        }
     }
     // const handleDelete = () => {
     //     dispatch(deleteCategory(category.id));

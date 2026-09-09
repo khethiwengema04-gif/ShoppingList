@@ -2,16 +2,17 @@
     top: 0;
     display: flex;
     flex-direction: row;
+    align-items: center;
     height: 100px;
     width: 100%;
     background-color: rgb(23, 191, 157);
     border: solid rgb(38, 159, 138);
-    gap: 1600px;
+    gap: 1000px;
 }
 
 .profileImg {
     width: 80px;
     height: 70px;
-    gap: 300px;
+    gap: 30px;
 
 }

@@ -80,6 +80,15 @@
       "cellphone": "0897654321",
       "verifypassword": "Phiwa",
       "id": "4niJkgJaZsc"
+    },
+    {
+      "fullnames": "Happiness",
+      "lastname": "Mhlongo",
+      "emailadress": "happy@gmail",
+      "password": "123456",
+      "cellphone": "98764356567",
+      "verifypassword": "123456",
+      "id": "Uv728Phb0xM"
     }
   ],
   "lists": [
@@ -442,32 +451,97 @@
       "userId": "",
       "name": "me",
       "id": "8Ly42OeNAx4"
+    },
+    {
+      "userId": "vnj8m0tN84k",
+      "name": "fruits",
+      "id": "TTx6LUmCMyQ"
+    },
+    {
+      "userId": "vnj8m0tN84k",
+      "name": "vegitables",
+      "id": "GGbYrWM-u1I"
+    },
+    {
+      "userId": "vnj8m0tN84k",
+      "name": "clothes",
+      "id": "j9HhIR31-SY"
+    },
+    {
+      "userId": "",
+      "name": "fruits",
+      "id": "sYFahDp7z18"
+    },
+    {
+      "userId": "",
+      "name": "gan",
+      "id": "4N-xlePmo9Q"
+    },
+    {
+      "userId": "vnj8m0tN84k",
+      "name": "List",
+      "id": "JloYEPamOJc"
+    },
+    {
+      "userId": "",
+      "name": "Party",
+      "id": "puxuiPtEGvY"
+    },
+    {
+      "userId": "",
+      "name": "fruit",
+      "id": "NW9PGptksH0"
+    },
+    {
+      "userId": "",
+      "name": "fruit",
+      "id": "lAVInvPAMNo"
+    },
+    {
+      "userId": "",
+      "name": "fruit",
+      "id": "WunzLcG-Xzg"
+    },
+    {
+      "userId": "",
+      "name": "rezfe",
+      "id": "Qs45MK6U5aU"
     }
   ],
   "items": [
     {
-      "name": "Apple",
-      "quantity": 1,
-      "optionalNote": "Notes",
-      "id": "k_hnwSP-vHY"
+      "id": "k_hnwSP-vHY",
+      "name": "Apple Munch",
+      "quantity": 6,
+      "optionalNote": "Notes"
     },
     {
+      "id": "9EBF1VesfsQ",
       "name": "Grapes",
+      "quantity": 6,
+      "optionalNote": "green"
+    },
+    {
+      "id": "-Y5PKl46FaM",
+      "name": "Banana",
+      "quantity": 2,
+      "optionalNote": "Fresh"
+    },
+    {
+      "name": "fgdfds",
+      "userId": "",
+      "listId": "WunzLcG-Xzg",
+      "quantity": 2,
+      "optionalNote": "",
+      "id": "0dzIgFsvS6s"
+    },
+    {
+      "name": "bvv",
+      "userId": "",
+      "listId": "Qs45MK6U5aU",
       "quantity": 1,
-      "optionalNote": "green",
-      "id": "9EBF1VesfsQ"
-    },
-    {
-      "name": "samsung",
-      "quantity": 2,
-      "optionalNote": "grey",
-      "id": "edsyofmfC48"
-    },
-    {
-      "name": "samsung",
-      "quantity": 2,
-      "optionalNote": "grey",
-      "id": "YRB-CvOXsIg"
+      "optionalNote": "",
+      "id": "RDJS93RVVe0"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

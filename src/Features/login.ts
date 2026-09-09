@@ -17,7 +17,7 @@ const initialState: loginState = {
     error: null,
 }
 
-//thunk
+// get thunk
 
 export const loginThunk = createAsyncThunk(
     'auth/loginUser',

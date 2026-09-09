@@ -4,6 +4,8 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 export interface ItemList {
     id?: string;
     name: string;
+    userId: string;
+    listId: string;
     quantity: number;
     optionalNote: string;
 
@@ -24,6 +26,8 @@ const initialState: ItemlistState = {
     name: "",
     quantity: 0,
     optionalNote: "",
+    userId: "",
+    listId: "",
     editingItemId: null,
     isLoading: false,
     error: null,
@@ -56,15 +60,15 @@ export const getItemListThunk = createAsyncThunk(
     'ItemList/getItemListThunk',
     async (ListId: string, api) => { // Added type string for ListId
         try {
-            // Fix: Changed &{listId} to ${ListId} and wrapped in backticks (`)
-            const response = await fetch(`http://localhost:3001/items/${ListId}`, {
+            //  Changed &{listId} to ${ListId} and wrapped in backticks (`)
+            const response = await fetch(`http://localhost:3001/items?listId=${ListId}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
                 },
             });
 
-            // Fix: Updated error message to match a GET request failure
+            //  Updated error message to match a GET request failure
             if (!response.ok) throw new Error('Could not fetch items');
 
             const data = await response.json();
@@ -94,25 +98,25 @@ export const deleteItemList = createAsyncThunk(
 );
 
 //EDIT THUNK
-// export const editList = createAsyncThunk(
-//     "List/editList",
-//     async (editList: ItemList, { rejectWithValue }) => {
-//         try {
-//             const response = await fetch(
-//                 `http://localhost:3001/items/${editList.id}`,
-//                 {
-//                     method: "PUT",
-//                     headers: { "Content-Type": "application/json" },
-//                     body: JSON.stringify(editList),
-//                 },
-//             );
-//             if (!response.ok) throw new Error("Failed to update item");
-//             return (await response.json()) as ItemList;
-//         } catch (error) {
-//             return rejectWithValue((error as Error).message);
-//         }
-//     },
-// );
+export const editList = createAsyncThunk(
+    "List/editList",
+    async (editList: ItemList, { rejectWithValue }) => {
+        try {
+            const response = await fetch(
+                `http://localhost:3001/items/${editList.id}`,
+                {
+                    method: "PUT",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(editList),
+                },
+            );
+            if (!response.ok) throw new Error("Failed to update item");
+            return (await response.json()) as ItemList;
+        } catch (error) {
+            return rejectWithValue((error as Error).message);
+        }
+    },
+);
 
 
 
@@ -138,12 +142,16 @@ export const ItemListSlice = createSlice({
             state.name = action.payload.name
             state.quantity = action.payload.quantity
             state.optionalNote = action.payload.optionalNote;
+            state.userId = action.payload.userId;
+            state.listId = action.payload.listId;
         },
         clearEditingItem: (state) => {
             state.editingItemId = null;
             state.name = '';
             state.quantity = 0;
             state.optionalNote = '';
+            state.userId = '';
+            state.listId = '';
         }
 
     },
@@ -195,24 +203,36 @@ export const ItemListSlice = createSlice({
                 state.isLoading = false;
                 state.error = action.payload as string || 'Failed to delete item';
             })
+            .addCase(editList.fulfilled, (state, action) => {
+                state.isLoading = false;
 
-            // .addCase(editList.pending, (state) => {
-            //     state.isLoading = true;
-            // })
-            // .addCase(editList.fulfilled, (state, action: PayloadAction<ItemList>) => {
-            //     state.isLoading = false;
-            //     state.itemList = state.itemList.map((item) =>
-            //         item.id === action.payload.id ? action.payload : item,
-            //     );
-            //     state.editingItemId = null;
-            //     state.name = '';
-            //     state.quantity = 0;
-            //     state.optionalNote = '';
-            // })
-            // .addCase(editList.rejected, (state, action) => {
-            //     state.isLoading = false;
-            //     state.error = action.payload as string;
-            // });
+                // Find the item we just edited in our array and replace it with the updated payload
+                const index = state.itemList.findIndex(item => item.id === action.payload.id);
+                if (index !== -1) {
+                    state.itemList[index] = action.payload;
+                }
+
+                // Clean up: reset editingItemId back to null so the form changes back to "Add" mode
+                state.editingItemId = null;
+            })
+
+        // .addCase(editList.pending, (state) => {
+        //     state.isLoading = true;
+        // })
+        // .addCase(editList.fulfilled, (state, action: PayloadAction<ItemList>) => {
+        //     state.isLoading = false;
+        //     state.itemList = state.itemList.map((item) =>
+        //         item.id === action.payload.id ? action.payload : item,
+        //     );
+        //     state.editingItemId = null;
+        //     state.name = '';
+        //     state.quantity = 0;
+        //     state.optionalNote = '';
+        // })
+        // .addCase(editList.rejected, (state, action) => {
+        //     state.isLoading = false;
+        //     state.error = action.payload as string;
+        // });
     }
 
 })

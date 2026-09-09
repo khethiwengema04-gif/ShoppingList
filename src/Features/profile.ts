@@ -4,20 +4,20 @@ import type { RootState } from '../store';
 
 export interface ProfileState {
     id?: number | string;
-    name: string;
-    surname: string;
+    fullname: string;   // Was: name
+    lastname: string;   // Was: surname
     email: string;
-    cellNumber: string;
+    cellphone: string;  // Was: cellNumber
     password: string;
     isLoading: boolean;
     error: string | null;
 }
 
 const initialState: ProfileState = {
-    name: '',
-    surname: '',
+    fullname: '',
+    lastname: '',
     email: '',
-    cellNumber: '',
+    cellphone: '',
     password: '',
     isLoading: false,
     error: null,
@@ -25,10 +25,14 @@ const initialState: ProfileState = {
 
 const BASE_API_URL = 'http://localhost:3001/users';
 
-const getAuthenticatedUserId = (state: any): string | null | number => {
-    if (state.login?.user?.id) {
-        return state.auth?.user?.id || null;
+// Fixed the fallback state lookups
+const getAuthenticatedUserId = (state: RootState): string | null | number => {
+    // Corrected to look into the unified login slice state path
+    const loginSlice = (state as any).login;
+    if (loginSlice?.user?.id) {
+        return loginSlice.user.id;
     }
+
     const savedUser = localStorage.getItem('user');
     if (savedUser) {
         const parsedUser = JSON.parse(savedUser);
@@ -38,11 +42,11 @@ const getAuthenticatedUserId = (state: any): string | null | number => {
 };
 
 // READ: Fetch current data
-export const fetchProfileData = createAsyncThunk<User, void, { state: RootState; rejectValue: string }
->('profile/fetchProfileData',
+export const fetchProfileData = createAsyncThunk<any, void, { state: RootState; rejectValue: string }>(
+    'profile/fetchProfileData',
     async (_, { getState, rejectWithValue }) => {
         try {
-            const state = getState() as any;
+            const state = getState();
             const userId = getAuthenticatedUserId(state);
 
             if (!userId) throw new Error('No authenticated user session found.');
@@ -57,12 +61,12 @@ export const fetchProfileData = createAsyncThunk<User, void, { state: RootState;
     }
 );
 
-// UPDATE: Save profile and credential data
-export const updateProfileData = createAsyncThunk(
+// UPDATE: Save profile and credential data 
+export const updateProfileData = createAsyncThunk<any, Omit<ProfileState, 'isLoading' | 'error'>, { state: RootState; rejectValue: string }>(
     'profile/updateProfileData',
-    async (formData: Omit<ProfileState, 'isLoading' | 'error'>, { getState, rejectWithValue }) => {
+    async (formData, { getState, rejectWithValue }) => {
         try {
-            const state = getState() as any;
+            const state = getState();
             const userId = getAuthenticatedUserId(state);
 
             if (!userId) throw new Error('Authentication session expired.');
@@ -89,6 +93,7 @@ const profileSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
+            // FETCH CASES
             .addCase(fetchProfileData.pending, (state) => {
                 state.isLoading = true;
                 state.error = null;
@@ -96,25 +101,29 @@ const profileSlice = createSlice({
             .addCase(fetchProfileData.fulfilled, (state, action: PayloadAction<any>) => {
                 state.isLoading = false;
                 state.id = action.payload.id;
-                state.name = action.payload.name || '';
-                state.surname = action.payload.surname || '';
+                // Safeguard keys to target the corrected variable names
+                state.fullname = action.payload.fullname || action.payload.name || '';
+                state.lastname = action.payload.lastname || action.payload.surname || '';
                 state.email = action.payload.email || '';
-                state.cellNumber = action.payload.cellNumber || '';
+                state.cellphone = action.payload.cellphone || action.payload.cellNumber || '';
                 state.password = action.payload.password || '';
             })
             .addCase(fetchProfileData.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload as string;
             })
+
+            // UPDATE CASES
             .addCase(updateProfileData.pending, (state) => {
                 state.isLoading = true;
+                state.error = null;
             })
             .addCase(updateProfileData.fulfilled, (state, action: PayloadAction<any>) => {
                 state.isLoading = false;
-                state.name = action.payload.name;
-                state.surname = action.payload.surname;
+                state.fullname = action.payload.fullname;
+                state.lastname = action.payload.lastname;
                 state.email = action.payload.email;
-                state.cellNumber = action.payload.cellNumber;
+                state.cellphone = action.payload.cellphone;
                 state.password = action.payload.password;
                 alert('Profile saved successfully!');
             })
@@ -128,4 +137,3 @@ const profileSlice = createSlice({
 
 export const { clearProfileStore } = profileSlice.actions;
 export default profileSlice.reducer;
-

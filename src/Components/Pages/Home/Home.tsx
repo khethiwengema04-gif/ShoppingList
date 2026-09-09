@@ -38,7 +38,7 @@ export const Home = () => {
         <div>
             <Navbar />
             <Search onSearch={handleSearch} />
-            <CategoryList onDelete={() => { }} onEdit={() => { }} />
+            <CategoryList onDelete={() => { }} onEdit={() => { }} onSort={() => { }} />
             <div>
                 {
                     category.category.map((link) => (

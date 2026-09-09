@@ -1,0 +1,13 @@
+.landing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: aquamarine;
+}
+
+.startBtn {
+    height: 40px;
+    width: 80px;
+}

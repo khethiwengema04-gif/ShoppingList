@@ -1,14 +1,14 @@
 # SHOPPING-LIST APP
 
 # The Project description
-```This is the project of creating the lists with lists app,the website built using React, TypeScript,HTML,Redux, and CSS Modules.It was created using the components,Store.ts/Redux and this was use for the app to be responsive.This ShoppingList is based on Redux and react dev techniques.
+```This is the project of creating the lists with lists app,the website built using React, TypeScript,HTML,Redux, and CSS Modules.It was created using the components,Store.ts/Redux and this was used for the app to be responsive.This ShoppingList is based on Redux and react dev techniques.
 
 
 # Installation and set-up
 ```bash
    react-redux
    reduxjs/toolkit
-   json derver
+   json server
    axios
    
 
@@ -27,6 +27,7 @@
    yarn intall
 
    npm run dev
+   npx json-server db.json
    ```
 
    # Commits

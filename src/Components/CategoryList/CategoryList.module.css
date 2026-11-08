@@ -1,38 +1,113 @@
 .cardContainer {
     width: 100%;
-    height: 60vh;
+    min-height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: aquamarine;
-    gap: 20px;
-}
-
-.button {
-    height: 30px;
-    width: 50px;
-    border-radius: 10px;
-}
-
-.enter {
-    width: 250px;
-    height: 30px;
+    background-color: #f4f6fb;
+    gap: 25px;
+    padding: 40px 20px;
     border-radius: 15px;
 }
 
-.sortByImg {
-    height: 30px;
-    width: 80px;
-    /* margin-left: 80px;
-    margin-top: 50px;
-    align-items: center;
-    border: solid rgb(214, 100, 59); */
+.tittle {
+    font-size: 30px;
+    font-weight: 700;
+    color: #252b48;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
 
+.enter {
+    width: 100%;
+    max-width: 380px;
+    height: 48px;
+    padding: 0 18px;
+    border: 1px solid #d5d9e5;
+    border-radius: 10px;
+    background-color: white;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.enter:focus {
+    border-color: #5365c5;
+    box-shadow: 0 0 0 3px rgba(83, 101, 197, 0.12);
+}
+
+.enter::placeholder {
+    color: #9ba1b1;
 }
 
 .buttonContainer {
     display: flex;
     flex-direction: row;
-    gap: 60px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.button {
+    height: 45px;
+    min-width: 120px;
+    padding: 0 20px;
+    border: none;
+    border-radius: 9px;
+    background-color: #3949ab;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.button:hover {
+    background-color: #283593;
+    transform: translateY(-2px);
+}
+
+.sortByImg {
+    height: 45px;
+    min-width: 150px;
+    padding: 0 12px;
+    border: 1px solid #d5d9e5;
+    border-radius: 9px;
+    background-color: white;
+    color: #39415e;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+}
+
+.sortByImg:focus {
+    border-color: #5365c5;
+}
+
+@media (max-width: 600px) {
+    .cardContainer {
+        padding: 30px 15px;
+    }
+
+    .tittle {
+        font-size: 24px;
+    }
+
+    .enter {
+        max-width: 100%;
+    }
+
+    .buttonContainer {
+        width: 100%;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .button,
+    .sortByImg {
+        width: 100%;
+        max-width: 380px;
+    }
 }

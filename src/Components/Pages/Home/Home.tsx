@@ -1,4 +1,3 @@
-
 import Navbar from '../../Navbar/Navbar'
 import { Search } from '../Search/Search'
 import CategoryList from '../../CategoryList/CategoryList'
@@ -8,7 +7,6 @@ import type { RootState } from '../../../store'
 import type { AppDispatch } from '../../../store'
 import { useDispatch } from 'react-redux'
 import { deleteCategory, getCategory } from '../../../Features/category'
-import { editCategory } from '../../../Features/category'
 import { useEffect } from 'react'
 
 

@@ -1,6 +1,4 @@
-import React from 'react'
 import style from './ItemCard.module.css'
-import { useNavigate } from 'react-router-dom'
 import type { ItemList } from '../../Features/List'
 
 

@@ -1,17 +1,113 @@
 .container {
-    background: aquamarine;
-    gap: 40px;
-    align-items: center;
+    width: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    height: 700px;
-    width: 500px;
-    padding-left: 50px;
-    margin: auto;
-    margin-top: 0px;
-    padding-bottom: 0px;
-    border-radius: 8px;
-    font: 100px;
-    font-size: medium;
+    justify-content: center;
+    align-items: center;
+    background-color: aquamarine;
+    padding: 25px 15px;
+    box-sizing: border-box;
+}
 
+.registerForm {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border: 2px solid rgb(20, 160, 111);
+    border-radius: 12px;
+    padding: 30px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.text {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.underline {
+    width: 60px;
+    height: 4px;
+    background-color: rgb(20, 160, 111);
+    border-radius: 5px;
+    margin-top: 8px;
+}
+
+.form {
+    width: 100%;
+}
+
+.inputs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.field {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.field p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.field input {
+    width: 100%;
+    height: 42px;
+    padding: 0 12px;
+    border: 1px solid rgb(20, 160, 111);
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.field input:focus {
+    border: 2px solid rgb(20, 160, 111);
+}
+
+.registerBtn {
+    width: 100%;
+    height: 45px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(28, 150, 144);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.registerBtn:hover {
+    background-color: rgb(20, 160, 111);
+}
+
+@media (max-width: 600px) {
+    .registerForm {
+        padding: 22px 18px;
+    }
+
+    .text {
+        font-size: 26px;
+    }
 }

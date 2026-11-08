@@ -1,12 +1,12 @@
 {
   "users": [
     {
-      "fullnames": "Khethiwe ",
+      "userId": "vnj8m0tN84k",
+      "fullname": "Khethiwe",
       "lastname": "ngema",
-      "emailadress": "khethiwe.ngema04@gmail.com",
-      "password": "khethy",
+      "email": "khethiwe.ngema04@gmail.com",
       "cellphone": "0606669273",
-      "verifypassword": "khethy",
+      "password": "khethy",
       "id": "vnj8m0tN84k"
     },
     {
@@ -46,12 +46,12 @@
       "id": "NnSqh8DmfQg"
     },
     {
-      "fullnames": "nompilo",
+      "userId": "TO6BS9tABGI",
+      "fullname": "nompilo",
       "lastname": "nzuza",
-      "emailadress": "nompilo@gmail.com",
-      "password": "mpilo",
+      "email": "nompilo@gmail.com",
       "cellphone": "0614444381",
-      "verifypassword": "mpilo",
+      "password": "mpilo",
       "id": "TO6BS9tABGI"
     },
     {
@@ -98,6 +98,15 @@
       "cellphone": "0783445",
       "verifypassword": "mahle",
       "id": "wXBQQvtEXaQ"
+    },
+    {
+      "fullnames": "phumzile",
+      "lastname": "ngema",
+      "emailadress": "phumzile@gmail.com",
+      "password": "phum",
+      "cellphone": "097898",
+      "verifypassword": "phum",
+      "id": "_TAGJQLIfHc"
     }
   ],
   "lists": [
@@ -525,6 +534,31 @@
       "userId": "",
       "name": "Vegitables",
       "id": "vKFfIwMxPb8"
+    },
+    {
+      "userId": "",
+      "name": "APPLES",
+      "id": "vaUcx2d6ICM"
+    },
+    {
+      "userId": "",
+      "name": "ORANGES",
+      "id": "l30YaM_OeCo"
+    },
+    {
+      "userId": "",
+      "name": "GRAPES",
+      "id": "7RMbyf8bY44"
+    },
+    {
+      "userId": "",
+      "name": "clothes",
+      "id": "joAtkmR599g"
+    },
+    {
+      "userId": "",
+      "name": "movie",
+      "id": "Cy6-J26Ciik"
     }
   ],
   "items": [
@@ -569,6 +603,14 @@
       "listId": "vKFfIwMxPb8",
       "quantity": 13,
       "optionalNote": "pack"
+    },
+    {
+      "id": "Lf4wZHbg_LE",
+      "name": "quarter apple",
+      "userId": "",
+      "listId": "vaUcx2d6ICM",
+      "quantity": 22,
+      "optionalNote": "red and  covered"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

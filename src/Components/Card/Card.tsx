@@ -2,7 +2,6 @@
 import style from './Card.module.css'
 import { type Category } from '../../Features/category'
 import { useNavigate } from 'react-router-dom';
-import deleteCategory from '../../Features/category';
 import { type AppDispatch } from '../../store';
 import { useDispatch } from 'react-redux';
 
@@ -13,21 +12,18 @@ interface CardProps {
     category: Category;
     onView: () => void;
     onDelete: () => void;
-    // onEdit: () => void;
     onShare: () => void;
 }
 
 
-export const Card = ({ category, onDelete, onShare }: CardProps) => {
-    const dispatch = useDispatch();
+export const Card = ({ category, onDelete }: CardProps) => {
+
     const navigate = useNavigate();
 
     const handleSubmitClick = () => {
         navigate(`/list/${category.id}`);
     }
-    // const handleSubmitClickShare = () => {
-    //     navigate(`/share/${category.id}`);
-    // }
+
 
     const handleSubmitClickShare = async (e: React.MouseEvent<HTMLButtonElement>) => {
         e.stopPropagation()

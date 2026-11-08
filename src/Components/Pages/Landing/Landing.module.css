@@ -1,18 +1,69 @@
 .landing {
+    width: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
     background-color: aquamarine;
-}
-
-.startBtn {
-    height: 40px;
-    width: 80px;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    text-align: center;
+    gap: 15px;
 }
 
 .shoppingImg {
-    height: 150vh;
-    width: 400px;
+    width: 100%;
+    max-width: 380px;
+    height: 300px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.landing h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.landing p {
+    font-size: 18px;
+    margin: 5px 0 20px;
+}
+
+.startBtn {
+    height: 48px;
+    min-width: 140px;
+    padding: 0 20px;
+    border: 2px solid rgb(20, 160, 111);
+    border-radius: 10px;
+    background-color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.startBtn:hover {
+    background-color: rgb(20, 160, 111);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 600px) {
+    .landing {
+        padding: 20px;
+    }
+
+    .shoppingImg {
+        max-width: 280px;
+        height: 230px;
+    }
+
+    .landing h1 {
+        font-size: 26px;
+    }
+
+    .landing p {
+        font-size: 16px;
+    }
 }

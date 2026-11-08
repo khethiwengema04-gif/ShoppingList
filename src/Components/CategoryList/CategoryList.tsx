@@ -1,97 +1,109 @@
-import React, { useState } from 'react'
-import styles from './CategoryList.module.css'
-import { useDispatch, useSelector } from 'react-redux'
-import type { RootState } from '../../store'
-import { categoryThunk } from '../../Features/category'
-import type { Category } from '../../Features/category'
-// import SortBy from '../../Assets/SortBy.png'
 
-
+import React, { useState } from 'react';
+import styles from './CategoryList.module.css';
+import { useDispatch, useSelector } from 'react-redux';
+import type { RootState } from '../../store';
+import { categoryThunk } from '../../Features/category';
+import type { Category } from '../../Features/category';
 
 interface CategoryProps {
-    onDelete: (id: number) => void
-    onEdit: (id: number) => void
+    onDelete: (id: number) => void;
+    onEdit: (id: number) => void;
     onSort: () => void;
-
-    // onShare: (id: number) => void
 }
 
-
 export const CategoryComponent: React.FC<CategoryProps> = ({ onSort }) => {
+
     const dispatch = useDispatch() as any;
 
-    // const category = useSelector((state: RootState) => state.category);
-    const user = useSelector((state: RootState) => state.login.user)
+    const user = useSelector((state: RootState) => state.login.user);
+
     const [categoryName, setCategoryName] = useState<string>('');
 
-    let User = useSelector((state: RootState) => state.login.user);
-    if (!user) {
+    let User = user;
+
+    if (!User) {
         const savedUser = localStorage.getItem('user');
-        if (savedUser) User = JSON.parse(savedUser);
+
+        if (savedUser) {
+            User = JSON.parse(savedUser);
+        }
     }
 
-    const userId = User?.id ? String(User.id) : "";
-
-    // useEffect(() => {
-    //     if (userId.trim() !== '') {
-    //         dispatch(getCategory(userId));
-    //     }
-    // }, [dispatch, userId]);
-
+    const userId = User?.id ? String(User.id) : '';
 
     const handleAddCategory = (e: React.FormEvent) => {
         e.preventDefault();
+
         if (!categoryName.trim()) {
             alert('Please enter a category name');
             return;
         }
 
-        dispatch(categoryThunk({ userId: userId, name: categoryName } as Omit<Category, "id">))
+        if (!userId) {
+            alert('Please log in before adding a category');
+            return;
+        }
+
+        dispatch(
+            categoryThunk({
+                userId: userId,
+                name: categoryName.trim()
+            } as Omit<Category, 'id'>)
+        );
+
+        setCategoryName('');
     };
 
-
-
     return (
-
-
-        <form >
+        <form onSubmit={handleAddCategory}>
             <div className={styles.cardContainer}>
-                <h1 className={styles.tittle}>CATEGORIES:</h1>
 
-                <input className={styles.enter}
-                    type='text'
-                    placeholder='addCategory Here'
+                <h1 className={styles.tittle}>
+                    MANAGE CATEGORIES
+                </h1>
+
+                <input
+                    className={styles.enter}
+                    type="text"
+                    placeholder="Enter category name..."
+                    value={categoryName}
                     onChange={(e) => setCategoryName(e.target.value)}
                 />
+
                 <div className={styles.buttonContainer}>
 
-                    <button className={styles.button} onClick={handleAddCategory} >
-                        Add+
+                    <button
+                        className={styles.button}
+                        type="submit"
+                    >
+                        Add Category +
                     </button>
-                    {/* <button className={styles.button} onClick={handleShareCategory} >
-                        Share
-                    </button> */}
 
+                    <select
+                        className={styles.sortByImg}
+                        onChange={onSort}
+                        defaultValue=""
+                    >
+                        <option value="" disabled>
+                            Sort by
+                        </option>
 
+                        <option value="name">
+                            Category Name
+                        </option>
 
-                    <select className={styles.sortByImg} onClick={onSort}>
-                        <option value=" ">Sort by</option>
-                        <option value="name">Category Name</option>
-                        <option value="date">Added date</option>
+                        <option value="date">
+                            Added Date
+                        </option>
 
                     </select>
-
-
-
 
                 </div>
 
             </div>
-
-
         </form>
-
-    )
-
+    );
 };
-export default CategoryComponent
+
+export default CategoryComponent;

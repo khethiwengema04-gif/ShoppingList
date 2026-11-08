@@ -58,9 +58,8 @@ export const ItemListThunk = createAsyncThunk(
 
 export const getItemListThunk = createAsyncThunk(
     'ItemList/getItemListThunk',
-    async (ListId: string, api) => { // Added type string for ListId
+    async (ListId: string, api) => {
         try {
-            //  Changed &{listId} to ${ListId} and wrapped in backticks (`)
             const response = await fetch(`http://localhost:3001/items?listId=${ListId}`, {
                 method: 'GET',
                 headers: {
@@ -68,7 +67,7 @@ export const getItemListThunk = createAsyncThunk(
                 },
             });
 
-            //  Updated error message to match a GET request failure
+
             if (!response.ok) throw new Error('Could not fetch items');
 
             const data = await response.json();
@@ -206,13 +205,12 @@ export const ItemListSlice = createSlice({
             .addCase(editList.fulfilled, (state, action) => {
                 state.isLoading = false;
 
-                // Find the item we just edited in our array and replace it with the updated payload
                 const index = state.itemList.findIndex(item => item.id === action.payload.id);
                 if (index !== -1) {
                     state.itemList[index] = action.payload;
                 }
 
-                // Clean up: reset editingItemId back to null so the form changes back to "Add" mode
+
                 state.editingItemId = null;
             })
 

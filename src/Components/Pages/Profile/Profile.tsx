@@ -17,7 +17,7 @@ const Profile: React.FC = () => {
     // Edit state toggle
     const [isEditable, setIsEditable] = useState<boolean>(false);
 
-    // Local form states synced with Redux data
+
     const [fullnames, setFullnames] = useState<string>('');
     const [lastname, setLastname] = useState<string>('');
     const [email, setEmail] = useState<string>('');
@@ -41,7 +41,7 @@ const Profile: React.FC = () => {
         }
     }, [profileState, Session]);
 
-    // Save changes back to database via slice thunk
+    // Saving all the changes back to database via slice thunk
     const handleSaveChanges = () => {
         if (Session?.id) {
             const updatedData = {

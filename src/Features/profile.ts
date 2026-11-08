@@ -4,10 +4,10 @@ import type { RootState } from '../store';
 
 export interface ProfileState {
     id?: number | string;
-    fullname: string;   // Was: name
-    lastname: string;   // Was: surname
+    fullname: string;
+    lastname: string;
     email: string;
-    cellphone: string;  // Was: cellNumber
+    cellphone: string;
     password: string;
     isLoading: boolean;
     error: string | null;
@@ -25,9 +25,9 @@ const initialState: ProfileState = {
 
 const BASE_API_URL = 'http://localhost:3001/users';
 
-// Fixed the fallback state lookups
+
 const getAuthenticatedUserId = (state: RootState): string | null | number => {
-    // Corrected to look into the unified login slice state path
+
     const loginSlice = (state as any).login;
     if (loginSlice?.user?.id) {
         return loginSlice.user.id;
@@ -41,7 +41,7 @@ const getAuthenticatedUserId = (state: RootState): string | null | number => {
     return null;
 };
 
-// READ: Fetch current data
+
 export const fetchProfileData = createAsyncThunk<any, void, { state: RootState; rejectValue: string }>(
     'profile/fetchProfileData',
     async (_, { getState, rejectWithValue }) => {
@@ -101,7 +101,6 @@ const profileSlice = createSlice({
             .addCase(fetchProfileData.fulfilled, (state, action: PayloadAction<any>) => {
                 state.isLoading = false;
                 state.id = action.payload.id;
-                // Safeguard keys to target the corrected variable names
                 state.fullname = action.payload.fullname || action.payload.name || '';
                 state.lastname = action.payload.lastname || action.payload.surname || '';
                 state.email = action.payload.email || '';

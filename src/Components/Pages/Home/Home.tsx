@@ -21,7 +21,7 @@ export const Home = () => {
         if (savedUser) User = JSON.parse(savedUser);
     }
 
-    //    const userId = User?.id ? String(User.id) : "";
+
 
     useEffect(() => {
         if (userId.trim() !== '') {

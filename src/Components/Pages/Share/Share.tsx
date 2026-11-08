@@ -81,12 +81,11 @@ export const SharedListPage = () => {
                     </div>
                 </div>
 
-                {/* Notes */}
+
                 {list.notes && (
                     <p className={styles.notes}><strong>Notes:</strong> {list.notes}</p>
                 )}
 
-                {/* Items */}
                 <h2 className={styles.itemsTitle}>Shopping list</h2>
 
                 {list.items.length === 0 ? (

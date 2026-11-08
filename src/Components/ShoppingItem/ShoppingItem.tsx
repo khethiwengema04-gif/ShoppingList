@@ -8,22 +8,21 @@ import { useParams } from 'react-router-dom';
 export const ShoppingItem: React.FC = () => {
     const dispatch = useDispatch<AppDispatch>();
 
-    // 1. Monitor the global state to see if an item is being edited
+
     const { editingItemId, itemList = [] } = useSelector((state: RootState) => state.list);
 
     const { listId } = useParams<{ listId: string }>();
     useEffect(() => {
         if (listId) {
-            dispatch(getItemListThunk(listId)); // Fetch items for the specific listId
+            dispatch(getItemListThunk(listId));
         }
     }, [listId, dispatch]);
 
-    // Local state variables for form inputs
+
     const [name, setName] = useState<string>('');
     const [quantity, setQuantity] = useState<number>(0);
     const [optionalNote, setOptionalNote] = useState<string>('');
 
-    // 2. Populate form fields automatically when 'Edit' is clicked in the parent list
     useEffect(() => {
         if (editingItemId) {
             const itemToEdit = itemList.find(item => item.id === editingItemId);
@@ -33,33 +32,32 @@ export const ShoppingItem: React.FC = () => {
                 setOptionalNote(itemToEdit.optionalNote || '');
             }
         } else {
-            // Clear inputs if we are no longer editing
+
             setName('');
             setQuantity(0);
             setOptionalNote('');
         }
     }, [editingItemId, itemList]);
 
-    // 3. Handle both Creating and Updating on Form Submission
     const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         if (!name.trim()) return;
 
         if (editingItemId) {
-            // If editingItemId exists, execute the update thunk
+
             dispatch(
                 editList({
                     id: editingItemId,
                     name,
-                    userId: '', // You may want to set this dynamically if needed
-                    listId: listId || '', // Ensure listId is passed correctly
+                    userId: '',
+                    listId: listId || '',
                     quantity,
                     optionalNote
                 })
             );
         } else {
-            // Otherwise, add a new item to your list
+
             dispatch(
                 ItemListThunk({
                     name,
@@ -71,7 +69,7 @@ export const ShoppingItem: React.FC = () => {
             );
         }
 
-        // Reset the form fields after submission
+
         setName('');
         setQuantity(0);
         setOptionalNote('');
@@ -81,7 +79,7 @@ export const ShoppingItem: React.FC = () => {
         <>
             <form onSubmit={handleFormSubmit} className={style.itemContainer}>
                 <div className={style.itemContent}>
-                    {/* The title dynamically switches depending on form action state */}
+
                     <h1>{editingItemId ? 'Edit Shopping Item' : 'Add Shopping Item'} (List ID: {listId})</h1>
 
                     <input
@@ -113,7 +111,7 @@ export const ShoppingItem: React.FC = () => {
                             {editingItemId ? 'Save Changes' : 'Add+'}
                         </button>
 
-                        {/* Optional: Add a cancel button to exit edit mode cleanly */}
+
                         {editingItemId && (
                             <button
                                 type="button"

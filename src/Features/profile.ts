@@ -1,5 +1,5 @@
+
 import { createSlice, createAsyncThunk, type PayloadAction } from '@reduxjs/toolkit';
-import type { User } from './register';
 import type { RootState } from '../store';
 
 export interface ProfileState {
@@ -25,60 +25,88 @@ const initialState: ProfileState = {
 
 const BASE_API_URL = 'http://localhost:3001/users';
 
-
 const getAuthenticatedUserId = (state: RootState): string | null | number => {
-
     const loginSlice = (state as any).login;
+
     if (loginSlice?.user?.id) {
         return loginSlice.user.id;
     }
 
     const savedUser = localStorage.getItem('user');
+
     if (savedUser) {
         const parsedUser = JSON.parse(savedUser);
         return parsedUser.id || null;
     }
+
     return null;
 };
 
-
-export const fetchProfileData = createAsyncThunk<any, void, { state: RootState; rejectValue: string }>(
+// Fetch profile information
+export const fetchProfileData = createAsyncThunk<
+    any,
+    void,
+    { state: RootState; rejectValue: string }
+>(
     'profile/fetchProfileData',
     async (_, { getState, rejectWithValue }) => {
         try {
             const state = getState();
             const userId = getAuthenticatedUserId(state);
 
-            if (!userId) throw new Error('No authenticated user session found.');
+            if (!userId) {
+                throw new Error('No authenticated user session found.');
+            }
 
             const response = await fetch(`${BASE_API_URL}/${userId}`);
-            if (!response.ok) throw new Error('Failed to fetch profile data.');
+
+            if (!response.ok) {
+                throw new Error('Failed to fetch profile data.');
+            }
 
             return await response.json();
+
         } catch (error: any) {
             return rejectWithValue(error.message);
         }
     }
 );
 
-// UPDATE: Save profile and credential data 
-export const updateProfileData = createAsyncThunk<any, Omit<ProfileState, 'isLoading' | 'error'>, { state: RootState; rejectValue: string }>(
+// Update profile information
+export const updateProfileData = createAsyncThunk<
+    any,
+    Omit<ProfileState, 'isLoading' | 'error'>,
+    { state: RootState; rejectValue: string }
+>(
     'profile/updateProfileData',
     async (formData, { getState, rejectWithValue }) => {
         try {
             const state = getState();
             const userId = getAuthenticatedUserId(state);
 
-            if (!userId) throw new Error('Authentication session expired.');
+            if (!userId) {
+                throw new Error('Authentication session expired.');
+            }
 
             const response = await fetch(`${BASE_API_URL}/${userId}`, {
                 method: 'PUT',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ ...formData, id: userId }),
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    ...formData,
+                    id: userId,
+                    fullnames: formData.fullname,
+                    emailadress: formData.email
+                }),
             });
 
-            if (!response.ok) throw new Error('Failed to update profile records.');
+            if (!response.ok) {
+                throw new Error('Failed to update profile records.');
+            }
+
             return await response.json();
+
         } catch (error: any) {
             return rejectWithValue(error.message);
         }
@@ -88,51 +116,90 @@ export const updateProfileData = createAsyncThunk<any, Omit<ProfileState, 'isLoa
 const profileSlice = createSlice({
     name: 'profile',
     initialState,
+
     reducers: {
         clearProfileStore: () => initialState
     },
+
     extraReducers: (builder) => {
         builder
-            // FETCH CASES
+
+            // FETCH PROFILE
             .addCase(fetchProfileData.pending, (state) => {
                 state.isLoading = true;
                 state.error = null;
             })
+
             .addCase(fetchProfileData.fulfilled, (state, action: PayloadAction<any>) => {
                 state.isLoading = false;
+
                 state.id = action.payload.id;
-                state.fullname = action.payload.fullname || action.payload.name || '';
-                state.lastname = action.payload.lastname || action.payload.surname || '';
-                state.email = action.payload.email || '';
-                state.cellphone = action.payload.cellphone || action.payload.cellNumber || '';
+
+                state.fullname =
+                    action.payload.fullnames ||
+                    action.payload.fullname ||
+                    action.payload.name ||
+                    '';
+
+                state.lastname =
+                    action.payload.lastname ||
+                    action.payload.surname ||
+                    '';
+
+                state.email =
+                    action.payload.emailadress ||
+                    action.payload.email ||
+                    '';
+
+                state.cellphone =
+                    action.payload.cellphone ||
+                    action.payload.cellNumber ||
+                    '';
+
                 state.password = action.payload.password || '';
             })
+
             .addCase(fetchProfileData.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload as string;
             })
 
-            // UPDATE CASES
+            // UPDATE PROFILE
             .addCase(updateProfileData.pending, (state) => {
                 state.isLoading = true;
                 state.error = null;
             })
+
             .addCase(updateProfileData.fulfilled, (state, action: PayloadAction<any>) => {
                 state.isLoading = false;
-                state.fullname = action.payload.fullname;
-                state.lastname = action.payload.lastname;
-                state.email = action.payload.email;
-                state.cellphone = action.payload.cellphone;
-                state.password = action.payload.password;
+
+                state.fullname =
+                    action.payload.fullnames ||
+                    action.payload.fullname ||
+                    '';
+
+                state.lastname = action.payload.lastname || '';
+
+                state.email =
+                    action.payload.emailadress ||
+                    action.payload.email ||
+                    '';
+
+                state.cellphone = action.payload.cellphone || '';
+                state.password = action.payload.password || '';
+
                 alert('Profile saved successfully!');
             })
+
             .addCase(updateProfileData.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload as string;
+
                 alert(`Error: ${action.payload}`);
             });
     },
 });
 
 export const { clearProfileStore } = profileSlice.actions;
+
 export default profileSlice.reducer;

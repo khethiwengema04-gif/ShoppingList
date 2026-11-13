@@ -1,3 +1,27 @@
+.backButton {
+    display: block;
+    margin: 15px 0 10px 20px;
+    padding: 6px 10px;
+    background-color: rgb(34, 123, 88);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.backButton:hover {
+    background-color: rgb(20, 100, 70);
+}
+
+.backButton:hover {
+    background-color: rgb(20, 100, 70);
+    transform: translateX(-3px);
+}
+
+
 .itemContainer {
     width: 100%;
     min-height: 320px;
@@ -7,7 +31,8 @@
     align-items: center;
     border: 2px solid rgb(20, 160, 111);
     border-radius: 12px;
-    background-color: aquamarine;
+    background-color: rgb(207, 248, 213);
+    ;
     padding: 25px;
     box-sizing: border-box;
     gap: 20px;

@@ -1,113 +1,192 @@
 .cardContainer {
     width: 100%;
     min-height: 60vh;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #f4f6fb;
+
+    background-color: #a4ecc3;
+
     gap: 25px;
-    padding: 40px 20px;
-    border-radius: 15px;
+    padding: 45px 25px;
+
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
+/* Category heading */
 .tittle {
-    font-size: 30px;
+    font-size: clamp(24px, 3vw, 38px);
     font-weight: 700;
-    color: #252b48;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
+    color: #245a2c;
+    letter-spacing: 1.5px;
+    text-align: center;
+    margin: 0 0 10px;
 }
 
+/* Category input */
 .enter {
     width: 100%;
-    max-width: 380px;
-    height: 48px;
-    padding: 0 18px;
-    border: 1px solid #d5d9e5;
-    border-radius: 10px;
-    background-color: white;
-    font-size: 15px;
+    max-width: 730px;
+    min-height: 55px;
+
+    padding: 12px 20px;
+
+    border: 1px solid #117b45;
+    border-radius: 12px;
+
+    background-color: rgb(207, 248, 213);
+
+    font-size: 17px;
+    color: #245a2c;
+
     outline: none;
-    transition: 0.3s ease;
+    box-sizing: border-box;
+
+    transition: all 0.3s ease;
 }
 
 .enter:focus {
-    border-color: #5365c5;
-    box-shadow: 0 0 0 3px rgba(83, 101, 197, 0.12);
+    border-color: #138039;
+    box-shadow: 0 0 0 4px rgba(83, 197, 121, 0.18);
 }
 
 .enter::placeholder {
-    color: #9ba1b1;
+    color: #929aaa;
 }
 
+/* Buttons and sorting */
 .buttonContainer {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+
     gap: 20px;
     flex-wrap: wrap;
+
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .button {
-    height: 45px;
-    min-width: 120px;
-    padding: 0 20px;
+    min-height: 55px;
+    min-width: 200px;
+
+    padding: 12px 25px;
+
     border: none;
-    border-radius: 9px;
-    background-color: #3949ab;
+    border-radius: 12px;
+
+    background-color: #3f895a;
     color: white;
-    font-size: 15px;
+
+    font-size: 17px;
     font-weight: 600;
+
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .button:hover {
-    background-color: #283593;
-    transform: translateY(-2px);
+    background-color: #28935d;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
 }
 
+.button:active {
+    transform: translateY(0);
+}
+
+/* Sorting dropdown */
 .sortByImg {
-    height: 45px;
-    min-width: 150px;
-    padding: 0 12px;
+    min-height: 55px;
+    min-width: 200px;
+
+    padding: 12px 18px;
+
     border: 1px solid #d5d9e5;
-    border-radius: 9px;
+    border-radius: 12px;
+
     background-color: white;
     color: #39415e;
-    font-size: 14px;
+
+    font-size: 16px;
+
     cursor: pointer;
     outline: none;
+    box-sizing: border-box;
+
+    transition: border-color 0.3s ease;
 }
 
 .sortByImg:focus {
-    border-color: #5365c5;
+    border-color: #53c577;
 }
 
-@media (max-width: 600px) {
+/* Tablets */
+@media screen and (max-width: 768px) {
     .cardContainer {
-        padding: 30px 15px;
+        min-height: 50vh;
+        padding: 35px 20px;
+        gap: 20px;
     }
 
     .tittle {
-        font-size: 24px;
+        font-size: 28px;
     }
 
     .enter {
-        max-width: 100%;
+        max-width: 550px;
     }
 
     .buttonContainer {
+        gap: 15px;
+    }
+
+    .button,
+    .sortByImg {
+        min-width: 170px;
+    }
+}
+
+/* Mobile phones */
+@media screen and (max-width: 480px) {
+    .cardContainer {
+        min-height: auto;
+        padding: 35px 15px;
+        gap: 20px;
+        border-radius: 0 0 15px 15px;
+    }
+
+    .tittle {
+        font-size: 23px;
+        letter-spacing: 1px;
+    }
+
+    .enter {
         width: 100%;
+        min-height: 48px;
+        font-size: 15px;
+        padding: 10px 14px;
+    }
+
+    .buttonContainer {
         flex-direction: column;
+        width: 100%;
         gap: 12px;
     }
 
     .button,
     .sortByImg {
         width: 100%;
-        max-width: 380px;
+        max-width: 100%;
+        min-height: 48px;
+    }
+
+    .button {
+        font-size: 15px;
     }
 }

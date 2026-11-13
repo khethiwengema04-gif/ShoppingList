@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import styles from './CategoryList.module.css';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,7 +8,7 @@ import type { Category } from '../../Features/category';
 interface CategoryProps {
     onDelete: (id: number) => void;
     onEdit: (id: number) => void;
-    onSort: () => void;
+    onSort: (sortBy: string) => void;
 }
 
 export const CategoryComponent: React.FC<CategoryProps> = ({ onSort }) => {
@@ -57,6 +56,7 @@ export const CategoryComponent: React.FC<CategoryProps> = ({ onSort }) => {
 
     return (
         <form onSubmit={handleAddCategory}>
+
             <div className={styles.cardContainer}>
 
                 <h1 className={styles.tittle}>
@@ -82,7 +82,7 @@ export const CategoryComponent: React.FC<CategoryProps> = ({ onSort }) => {
 
                     <select
                         className={styles.sortByImg}
-                        onChange={onSort}
+                        onChange={(e) => onSort(e.target.value)}
                         defaultValue=""
                     >
                         <option value="" disabled>
@@ -92,13 +92,7 @@ export const CategoryComponent: React.FC<CategoryProps> = ({ onSort }) => {
                         <option value="name">
                             Category Name
                         </option>
-
-                        <option value="date">
-                            Added Date
-                        </option>
-
                     </select>
-
                 </div>
 
             </div>

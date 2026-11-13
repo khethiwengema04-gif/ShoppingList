@@ -5,17 +5,22 @@ import { useNavigate } from 'react-router-dom'
 
 export default function Navbar() {
     const navigate = useNavigate();
+
     const navigateToProfile = () => {
         navigate('/profilepage');
     };
 
-
     return (
-        <nav>
-            <div className={styles.nav}>
-                <Text varient={'h1'} style={{ margin: 0 }}>SHOPPING LIST</Text>
-                <img onClick={navigateToProfile} src={profile} alt='profile' className={styles.profileImg} />
-            </div>
+        <nav className={styles.nav}>
+            <Text varient={'h1'} style={{ margin: 0 }}>
+                SHOPPING LIST
+            </Text>
+            <img
+                src={profile}
+                alt="Profile"
+                className={styles.profileImg}
+                onClick={navigateToProfile}
+            />
         </nav>
     )
 }

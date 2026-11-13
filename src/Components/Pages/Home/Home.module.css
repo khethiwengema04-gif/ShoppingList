@@ -1,4 +1,39 @@
 .home {
-    background-color: aquamarine;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #a4ecc3;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
 
+.cardContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 25px;
+
+    width: 100%;
+    max-width: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+/* Tablets */
+@media screen and (max-width: 768px) {
+    .cardContainer {
+        gap: 18px;
+        padding: 20px;
+    }
+}
+
+/* Mobile phones */
+@media screen and (max-width: 480px) {
+    .cardContainer {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 15px;
+    }
 }

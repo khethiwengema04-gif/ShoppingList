@@ -59,7 +59,7 @@ export const getCategory = createAsyncThunk(
     async (userId: string, { rejectWithValue }) => {
         try {
             const response = await fetch(
-                `http://localhost:3001/categories?userId=${userId}`,
+                `http://localhost:3001/lists?userId=${userId}`,
                 {
                     method: "GET",
                     headers: { "Content-Type": "application/json" },

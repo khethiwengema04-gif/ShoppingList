@@ -1,6 +1,3 @@
-<img src="https://socialify.git.ci/khethiwengema04-gif/ShoppingList/image?language=1&owner=1&name=1&stargazers=1&theme=Light" alt="ShoppingList" width="640" height="320" />
-
-
 # SHOPPING-LIST APP
 
 # The Project description

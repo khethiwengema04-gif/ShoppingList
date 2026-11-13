@@ -65,6 +65,13 @@ const Profile: React.FC = () => {
 
     return (
         <div className={styles.container}>
+            <button
+                type="button"
+                className={styles.backButton}
+                onClick={() => navigate('/home')}
+            >
+                ← Back to Home
+            </button>
             <div className={styles.loginForm}>
                 <h1 className={styles.tittle}>MY PROFILE</h1>
                 <img src={profileIcon} alt='profile' className={styles.profileImg} />

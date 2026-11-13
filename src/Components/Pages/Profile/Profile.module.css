@@ -5,10 +5,29 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: aquamarine;
+    background-color: #a4ecc3;
     padding: 30px 20px;
     box-sizing: border-box;
     gap: 20px;
+}
+
+.backButton {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 6px 12px;
+    background-color: rgb(34, 123, 88);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.backButton:hover {
+    background-color: rgb(20, 100, 70);
 }
 
 .loginForm {
@@ -61,7 +80,7 @@
     align-items: center;
     padding: 0 12px;
     margin: 0;
-    background-color: aquamarine;
+    background-color: #a4ecc3;
     border: 1px solid rgb(20, 160, 111);
     border-radius: 8px;
     box-sizing: border-box;

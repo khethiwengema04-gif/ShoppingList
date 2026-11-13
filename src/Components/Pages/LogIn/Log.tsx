@@ -28,8 +28,9 @@ const login = () => {
         e.preventDefault()
         const loginUser = await dispatch(loginThunk({ emailadress, password }) as any)
         if (loginThunk.fulfilled.match(loginUser)) {
-            alert('Log In')
-            navigate('/home')
+            localStorage.setItem('user', JSON.stringify(loginUser.payload));
+            alert('Log In');
+            navigate('/home');
         }
         if (loginThunk.rejected.match(loginUser)) {
             alert(loginUser.payload as string || "Invalid password")

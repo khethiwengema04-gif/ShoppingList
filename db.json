@@ -107,6 +107,42 @@
       "cellphone": "097898",
       "verifypassword": "phum",
       "id": "_TAGJQLIfHc"
+    },
+    {
+      "userId": "XzsUrICv86M",
+      "fullname": "Nolwazi",
+      "lastname": "ngema",
+      "email": "nolwazi@gmail.com",
+      "cellphone": "0723456789",
+      "password": "lwazi",
+      "id": "XzsUrICv86M"
+    },
+    {
+      "userId": "nZFmQvcopB8",
+      "fullname": "Ntokozo",
+      "lastname": "khuzwayo",
+      "email": "ntokozokhuzwayo1@gmail.com",
+      "cellphone": "0786775969",
+      "password": "ntokozo",
+      "id": "nZFmQvcopB8"
+    },
+    {
+      "fullnames": "Khethiwe",
+      "lastname": "Ngema",
+      "emailadress": "khethiwe.ngema04@gmail.com",
+      "password": "khethy",
+      "cellphone": "0606669273",
+      "verifypassword": "khethy",
+      "id": "5LafyOtVc94"
+    },
+    {
+      "fullnames": "phumzile",
+      "lastname": "ngema",
+      "emailadress": "phumzile@gmail.com",
+      "password": "phum",
+      "cellphone": "12345",
+      "verifypassword": "phum",
+      "id": "_iQ2sGGciRY"
     }
   ],
   "lists": [
@@ -559,6 +595,91 @@
       "userId": "",
       "name": "movie",
       "id": "Cy6-J26Ciik"
+    },
+    {
+      "userId": "XzsUrICv86M",
+      "name": "FRUITS",
+      "id": "gkofTkpUa-8"
+    },
+    {
+      "userId": "XzsUrICv86M",
+      "name": "CLOTHES",
+      "id": "I7C0esKOto4"
+    },
+    {
+      "userId": "nZFmQvcopB8",
+      "name": "Apple",
+      "id": "XVgSHEULAao"
+    },
+    {
+      "userId": "nZFmQvcopB8",
+      "name": "Cheese",
+      "id": "XsYDdtYukS0"
+    },
+    {
+      "userId": "nZFmQvcopB8",
+      "name": "Mango",
+      "id": "OZ_zkCrL71U"
+    },
+    {
+      "userId": "3",
+      "name": "CLOTHES",
+      "id": "HS1YRFQuupw"
+    },
+    {
+      "userId": "3",
+      "name": "FOOD",
+      "id": "_Y-f7CQCFM0"
+    },
+    {
+      "userId": "3",
+      "name": "VEGITABLES",
+      "id": "if_RTBYSboc"
+    },
+    {
+      "userId": "3",
+      "name": "FOOD",
+      "id": "uEqvrHQ7dNc"
+    },
+    {
+      "userId": "3",
+      "name": "Clothes",
+      "id": "A1G4E2bXBnM"
+    },
+    {
+      "userId": "5LafyOtVc94",
+      "name": "CLOTHES",
+      "id": "0wQIT9iEUiY"
+    },
+    {
+      "userId": "5LafyOtVc94",
+      "name": "FOOD",
+      "id": "kMl7bEfpelI"
+    },
+    {
+      "userId": "5LafyOtVc94",
+      "name": "HAIR",
+      "id": "m5cW1mrB1Mo"
+    },
+    {
+      "userId": "5LafyOtVc94",
+      "name": "PARTY-SET",
+      "id": "lTpf1c60t74"
+    },
+    {
+      "userId": "5LafyOtVc94",
+      "name": "COSMETICS",
+      "id": "bguDncF60fM"
+    },
+    {
+      "userId": "_TAGJQLIfHc",
+      "name": "DRESSES",
+      "id": "1f5NNG9otEE"
+    },
+    {
+      "userId": "_TAGJQLIfHc",
+      "name": "GROCERY",
+      "id": "23yF3i8LOrk"
     }
   ],
   "items": [
@@ -611,6 +732,94 @@
       "listId": "vaUcx2d6ICM",
       "quantity": 22,
       "optionalNote": "red and  covered"
+    },
+    {
+      "name": "Apple",
+      "userId": "",
+      "listId": null,
+      "quantity": 3,
+      "optionalNote": "green",
+      "id": "ISybM_TOxSc"
+    },
+    {
+      "name": "Oranges",
+      "userId": "",
+      "listId": null,
+      "quantity": 6,
+      "optionalNote": "In a sack",
+      "id": "sLdeoEEige0"
+    },
+    {
+      "name": "Green apples",
+      "userId": "",
+      "listId": "XVgSHEULAao",
+      "quantity": 5,
+      "optionalNote": "in a sack",
+      "id": "osiIrTLAN48"
+    },
+    {
+      "name": "Red apples",
+      "userId": "",
+      "listId": "XVgSHEULAao",
+      "quantity": 5,
+      "optionalNote": "Chopped",
+      "id": "mAtCtWo2UpM"
+    },
+    {
+      "name": "OIU",
+      "userId": "",
+      "listId": "HS1YRFQuupw",
+      "quantity": 3,
+      "optionalNote": "OJOIH",
+      "id": "MQp2uPFxMuA"
+    },
+    {
+      "name": "T-shirts",
+      "userId": "",
+      "listId": "0wQIT9iEUiY",
+      "quantity": 4,
+      "optionalNote": "Red,blue,pink,brown",
+      "id": "2pZ8sgpDD54"
+    },
+    {
+      "name": "Skirts",
+      "userId": "_TAGJQLIfHc",
+      "listId": null,
+      "quantity": 30,
+      "optionalNote": "With beads",
+      "id": "GW5iihmRRTg"
+    },
+    {
+      "id": "X-SKmYSqo-Q",
+      "name": "Imitsha",
+      "userId": "_TAGJQLIfHc",
+      "listId": null,
+      "quantity": 30,
+      "optionalNote": "2 orange, 28 whites"
+    },
+    {
+      "name": "Vests",
+      "userId": "_TAGJQLIfHc",
+      "listId": null,
+      "quantity": 30,
+      "optionalNote": "28 Orange, 2 whites with touch of orange",
+      "id": "vnfy_L2fke0"
+    },
+    {
+      "name": "apple",
+      "userId": "_TAGJQLIfHc",
+      "listId": "23yF3i8LOrk",
+      "quantity": 4,
+      "optionalNote": "green one",
+      "id": "c7--9O7mSuY"
+    },
+    {
+      "id": "95hpbm33T7A",
+      "name": "pineapple",
+      "userId": "_TAGJQLIfHc",
+      "listId": "23yF3i8LOrk",
+      "quantity": 7,
+      "optionalNote": "Chopped"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
